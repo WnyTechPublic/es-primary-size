@@ -79,42 +79,79 @@
   }
 
   .filter-row {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1.5rem 2rem;
-    align-items: flex-start;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 0.85rem;
+    align-items: stretch;
   }
-  .filter-group { min-width: 140px; }
-  .filter-group .group-label {
-    font-size: 0.75rem;
-    color: var(--muted);
-    margin-bottom: 0.5rem;
-    text-transform: uppercase;
-    letter-spacing: 0.04em;
-  }
-  .chips { display: flex; flex-wrap: wrap; gap: 0.4rem; }
-  .chip {
-    padding: 0.3rem 0.75rem;
-    border-radius: 999px;
+  .filter-group {
     border: 1px solid var(--border);
-    background: var(--panel);
-    cursor: pointer;
-    font-size: 0.85rem;
-    user-select: none;
-    transition: all 0.15s ease;
+    border-radius: 8px;
+    padding: 0.85rem 1rem 0.9rem;
+    background: #fdfdfe;
+    display: flex;
+    flex-direction: column;
   }
-  .chip:hover { border-color: var(--accent); }
+  .filter-group .group-label {
+    font-size: 0.72rem;
+    color: var(--muted);
+    margin-bottom: 0.6rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px dashed var(--border);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-weight: 600;
+  }
+  .chips { display: flex; flex-direction: column; gap: 0.35rem; }
+  .chip {
+    display: flex;
+    align-items: center;
+    gap: 0.55rem;
+    padding: 0.3rem 0.4rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.86rem;
+    color: var(--neutral);
+    user-select: none;
+    transition: background 0.12s ease;
+  }
+  .chip:hover { background: var(--accent-soft); }
+  .chip .check {
+    width: 16px;
+    height: 16px;
+    border: 1.5px solid var(--border);
+    border-radius: 3px;
+    background: #fff;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.12s ease;
+  }
+  .chip .check::after {
+    content: "";
+    width: 9px;
+    height: 5px;
+    border-left: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+    transform: rotate(-45deg) translate(1px, -1px);
+    opacity: 0;
+  }
   .chip.on {
-    background: var(--accent-soft);
-    border-color: var(--accent);
-    color: var(--accent);
+    color: var(--fg);
     font-weight: 500;
   }
+  .chip.on .check {
+    background: var(--accent);
+    border-color: var(--accent);
+  }
+  .chip.on .check::after { opacity: 1; }
   .filter-actions {
-    margin-left: auto;
+    grid-column: 1 / -1;
     display: flex;
+    justify-content: flex-end;
     gap: 0.5rem;
-    align-items: flex-end;
+    margin-top: 0.25rem;
   }
   .btn {
     padding: 0.4rem 0.85rem;
@@ -407,7 +444,7 @@ function renderFilters() {
     for (const [token, label] of Object.entries(FILTER_LABELS[g.key])) {
       const chip = document.createElement("div");
       chip.className = "chip" + (state[g.key].has(token) ? " on" : "");
-      chip.textContent = label;
+      chip.innerHTML = `<span class="check"></span><span>${label}</span>`;
       chip.onclick = () => {
         if (state[g.key].has(token)) {
           if (state[g.key].size > 1) state[g.key].delete(token);
