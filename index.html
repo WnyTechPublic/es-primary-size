@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>ES 저장 효율 매트릭스 — WnyTech R&D</title>
+<style>
+  :root {
+    --bg: #f8fafc;
+    --panel: #ffffff;
+    --fg: #0f172a;
+    --muted: #64748b;
+    --border: #e2e8f0;
+    --accent: #2563eb;
+    --accent-soft: #eff6ff;
+    --good: #059669;
+    --good-bg: #ecfdf5;
+    --bad: #dc2626;
+    --bad-bg: #fef2f2;
+    --warn: #d97706;
+    --warn-bg: #fffbeb;
+    --neutral: #475569;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--fg);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Pretendard",
+      "Noto Sans KR", sans-serif;
+    line-height: 1.55;
+  }
+  .container { max-width: 1280px; margin: 0 auto; padding: 2rem 1.25rem; }
+
+  header.page {
+    background: linear-gradient(135deg, #1e3a8a, #2563eb);
+    color: #fff;
+    padding: 2.5rem 0 2rem;
+  }
+  header.page h1 { margin: 0 0 0.5rem; font-size: 1.8rem; letter-spacing: -0.01em; }
+  header.page p { margin: 0; opacity: 0.85; font-size: 0.95rem; }
+  header.page .meta { margin-top: 0.75rem; font-size: 0.82rem; opacity: 0.7; }
+
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  .stat-card {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 1rem 1.25rem;
+  }
+  .stat-card .label { color: var(--muted); font-size: 0.8rem; }
+  .stat-card .value {
+    font-size: 1.5rem; font-weight: 600; margin: 0.25rem 0;
+    font-variant-numeric: tabular-nums;
+  }
+  .stat-card .sub { color: var(--muted); font-size: 0.8rem; font-family: ui-monospace, Menlo, monospace; }
+  .stat-card.best .value { color: var(--good); }
+  .stat-card.worst .value { color: var(--bad); }
+
+  .panel {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 1.25rem 1.5rem;
+    margin-bottom: 1.25rem;
+  }
+  .panel h2 {
+    margin: 0 0 1rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--neutral);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .filter-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem 2rem;
+    align-items: flex-start;
+  }
+  .filter-group { min-width: 140px; }
+  .filter-group .group-label {
+    font-size: 0.75rem;
+    color: var(--muted);
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+  .chips { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+  .chip {
+    padding: 0.3rem 0.75rem;
+    border-radius: 999px;
+    border: 1px solid var(--border);
+    background: var(--panel);
+    cursor: pointer;
+    font-size: 0.85rem;
+    user-select: none;
+    transition: all 0.15s ease;
+  }
+  .chip:hover { border-color: var(--accent); }
+  .chip.on {
+    background: var(--accent-soft);
+    border-color: var(--accent);
+    color: var(--accent);
+    font-weight: 500;
+  }
+  .filter-actions {
+    margin-left: auto;
+    display: flex;
+    gap: 0.5rem;
+    align-items: flex-end;
+  }
+  .btn {
+    padding: 0.4rem 0.85rem;
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    color: var(--neutral);
+    font-size: 0.85rem;
+    cursor: pointer;
+  }
+  .btn:hover { border-color: var(--accent); color: var(--accent); }
+
+  table.cases {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.88rem;
+  }
+  table.cases th, table.cases td {
+    padding: 0.6rem 0.5rem;
+    text-align: center;
+    border-bottom: 1px solid var(--border);
+  }
+  table.cases thead th {
+    font-size: 0.75rem;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    font-weight: 600;
+    background: #fafafa;
+    cursor: pointer;
+    user-select: none;
+    position: sticky;
+    top: 0;
+  }
+  table.cases thead th:hover { color: var(--accent); }
+  table.cases thead th .arrow { opacity: 0.5; margin-left: 0.25rem; }
+  table.cases tbody tr:hover { background: #f8fafc; }
+  table.cases td.case-name {
+    font-family: ui-monospace, Menlo, monospace;
+    font-size: 0.78rem;
+    color: var(--neutral);
+    text-align: left;
+    padding-left: 1rem;
+  }
+  table.cases td.num { font-variant-numeric: tabular-nums; }
+  .badge {
+    display: inline-block;
+    padding: 0.15rem 0.55rem;
+    border-radius: 999px;
+    font-size: 0.78rem;
+    font-weight: 500;
+    font-variant-numeric: tabular-nums;
+  }
+  .badge.good { color: var(--good); background: var(--good-bg); }
+  .badge.bad  { color: var(--bad);  background: var(--bad-bg); }
+  .badge.neutral { color: var(--neutral); background: #f1f5f9; }
+  .badge.warn { color: var(--warn); background: var(--warn-bg); }
+
+  .ds-pill {
+    display: inline-block;
+    padding: 0.1rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.7rem;
+    font-weight: 500;
+    margin-right: 0.4rem;
+  }
+  .ds-firewall { background: #fee2e2; color: #b91c1c; }
+  .ds-web      { background: #dbeafe; color: #1e40af; }
+  .ds-snmp     { background: #fef3c7; color: #92400e; }
+
+  .empty {
+    text-align: center;
+    padding: 3rem 1rem;
+    color: var(--muted);
+  }
+  .count-line {
+    margin-top: 0.75rem;
+    color: var(--muted);
+    font-size: 0.85rem;
+  }
+
+  footer {
+    color: var(--muted);
+    font-size: 0.78rem;
+    padding: 2rem 0 3rem;
+    line-height: 1.7;
+  }
+  footer a { color: var(--accent); }
+
+  .note {
+    background: var(--warn-bg);
+    border: 1px solid #fed7aa;
+    color: #7c2d12;
+    padding: 0.65rem 0.9rem;
+    border-radius: 6px;
+    font-size: 0.82rem;
+    margin-bottom: 1rem;
+  }
+</style>
+</head>
+<body>
+
+<header class="page">
+  <div class="container">
+    <h1>Elasticsearch 저장 효율 매트릭스</h1>
+    <p>4 축 (Index mode · Source mode · Codec · Parsing) × 3 데이터셋 (firewall · web · snmp)</p>
+    <div class="meta">WnyTech R&D · ES 9.3.1 · 4-node cluster · 2026-05</div>
+  </div>
+</header>
+
+<main class="container">
+
+  <section class="stats" id="stats">
+    <!-- populated by JS -->
+  </section>
+
+  <section class="panel">
+    <h2>필터</h2>
+    <div class="filter-row" id="filters">
+      <!-- populated by JS -->
+      <div class="filter-actions">
+        <button class="btn" id="reset">전체 선택</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="panel">
+    <h2>케이스별 저장 크기</h2>
+    <div class="note" id="note-tsds-web" style="display:none">
+      ⚠ <b>web 데이터셋의 TSDS 케이스는 dimension cardinality 부족(host.name 4개)으로 약 98%의 doc가 _id 중복으로 거부됩니다.</b>
+      운영 적용 시 데이터 유실 위험이 매우 큼.
+    </div>
+    <div style="overflow-x: auto">
+      <table class="cases" id="tbl">
+        <thead>
+          <tr>
+            <th data-k="dataset">Dataset</th>
+            <th data-k="case">Case <span class="arrow"></span></th>
+            <th data-k="mode">Index mode</th>
+            <th data-k="src">Source mode</th>
+            <th data-k="codec">Codec</th>
+            <th data-k="parsing">Parsing</th>
+            <th data-k="size">Store size <span class="arrow"></span></th>
+            <th data-k="ratio">vs raw <span class="arrow">▲</span></th>
+          </tr>
+        </thead>
+        <tbody id="tbody"></tbody>
+      </table>
+    </div>
+    <div class="count-line" id="count"></div>
+  </section>
+
+  <footer>
+    <div><b>데이터 출처:</b> WnyTech 사내 R&D 측정 결과를 기반으로 한 매트릭스. 각 축의 효과(ldb↔std, lz4↔zstd, syn↔str, p1/p2/p3)는 실측 헤드라인에 맞춰 calibration 되었으며, 개별 셀의 정확한 측정값은 원본 보고서 참조.</div>
+    <div style="margin-top:0.5rem"><b>원본 보고서:</b> <code>notion_ES_저장효율_종합리포트.md</code>, <code>Elasticsearch_저장효율_종합리포트.md</code></div>
+    <div style="margin-top:0.5rem"><b>라이브 측정 도구:</b> <code>webapp/</code> (FastAPI + React) — 클러스터 호스트 입력 → 4-step 위저드 → 누적 비교</div>
+  </footer>
+
+</main>
+
+<script>
+// ---- Data model ----
+const TOKEN_LABELS = {
+  mode:    { std: "standard", ldb: "logsdb", tsds: "TSDS" },
+  src:     { str: "stored", syn: "synthetic" },
+  codec:   { lz4: "LZ4", zstd: "ZSTD" },
+  parsing: {
+    p1: "p1 · raw only",
+    p2: "p2 · raw + parsed",
+    p3: "p3 · parsed only",
+  },
+};
+
+const AXES = ["mode", "src", "codec", "parsing"];
+
+// Multipliers tuned to documented headline numbers from the R&D report.
+// ratio_pri_over_raw = base_p1_str_lz4_std × parsing[p] × mode[m] × src[s] × codec[c]
+const DS_CONFIG = {
+  firewall: {
+    raw_bytes: 10485760,        // 10 MB
+    base: 1.00,                 // std.str.lz4.p1 ≈ 100% of raw
+    parsing: { p1: 1.00, p2: 1.32, p3: 0.55 },
+    mode:    { std: 1.00, ldb: 0.99, tsds: 0.96 },
+    src:     { str: 1.00, syn: 0.70 },
+    codec:   { lz4: 1.00, zstd: 0.79 },
+    notes:   {}
+  },
+  web: {
+    raw_bytes: 3145728,         // 3 MB
+    base: 1.15,                 // std.str.lz4.p1 ≈ 115% of raw (metadata heavy)
+    parsing: { p1: 1.00, p2: 1.18, p3: 0.55 },
+    mode:    { std: 1.00, ldb: 0.85, tsds: 0.97 },  // tsds not valid (data loss) but kept for display
+    src:     { str: 1.00, syn: 0.74 },
+    codec:   { lz4: 1.00, zstd: 0.78 },
+    notes:   { tsds: "98% 데이터 유실 위험 — _id 중복" }
+  },
+  snmp: {
+    raw_bytes: 10485760,        // 10 MB
+    base: 1.10,                 // std.str.lz4.p1 ≈ 110% of raw
+    parsing: { p1: 0.95, p2: 1.10, p3: 0.80 },
+    mode:    { std: 1.00, ldb: 0.95, tsds: 0.58 },
+    src:     { str: 1.00, syn: 0.88 },
+    codec:   { lz4: 1.00, zstd: 0.90 },
+    notes:   {}
+  },
+};
+
+function buildCases() {
+  const out = [];
+  for (const ds of Object.keys(DS_CONFIG)) {
+    const c = DS_CONFIG[ds];
+    for (const mode of ["std","ldb","tsds"]) {
+      for (const src of ["str","syn"]) {
+        for (const codec of ["lz4","zstd"]) {
+          for (const parsing of ["p1","p2","p3"]) {
+            const ratio = c.base * c.parsing[parsing] * c.mode[mode] * c.src[src] * c.codec[codec];
+            out.push({
+              dataset: ds,
+              case_name: `${mode}.${src}.${codec}.${parsing}`,
+              mode, src, codec, parsing,
+              size: c.raw_bytes * ratio,
+              raw_bytes: c.raw_bytes,
+              ratio,
+              warn: c.notes[mode] || null,
+            });
+          }
+        }
+      }
+    }
+  }
+  return out;
+}
+
+const ALL_CASES = buildCases();
+
+// ---- Format helpers ----
+function fmtBytes(n) {
+  if (n == null) return "-";
+  if (n < 1024) return `${n.toFixed(0)} B`;
+  if (n < 1024*1024) return `${(n/1024).toFixed(1)} KB`;
+  if (n < 1024*1024*1024) return `${(n/1024/1024).toFixed(2)} MB`;
+  return `${(n/1024/1024/1024).toFixed(2)} GB`;
+}
+function fmtDelta(ratio) {
+  if (ratio == null) return "-";
+  const pct = (ratio - 1) * 100;
+  if (Math.abs(pct) < 0.05) return "0%";
+  return pct > 0 ? `+${pct.toFixed(1)}%` : `${pct.toFixed(1)}%`;
+}
+
+// ---- State ----
+const FILTER_LABELS = {
+  dataset: { firewall: "firewall", web: "web", snmp: "snmp" },
+  mode:    TOKEN_LABELS.mode,
+  src:     TOKEN_LABELS.src,
+  codec:   TOKEN_LABELS.codec,
+  parsing: TOKEN_LABELS.parsing,
+};
+
+const state = {
+  dataset: new Set(["firewall","web","snmp"]),
+  mode:    new Set(["std","ldb","tsds"]),
+  src:     new Set(["str","syn"]),
+  codec:   new Set(["lz4","zstd"]),
+  parsing: new Set(["p1","p2","p3"]),
+  sort: { key: "ratio", dir: "asc" },
+};
+
+// ---- Render: filters ----
+function renderFilters() {
+  const container = document.getElementById("filters");
+  // Remove existing groups except actions
+  const actions = container.querySelector(".filter-actions");
+  container.querySelectorAll(".filter-group").forEach(el => el.remove());
+
+  const groups = [
+    { key: "dataset", label: "데이터셋" },
+    { key: "mode",    label: "Index mode" },
+    { key: "src",     label: "Source mode" },
+    { key: "codec",   label: "Codec" },
+    { key: "parsing", label: "Parsing" },
+  ];
+
+  for (const g of groups) {
+    const div = document.createElement("div");
+    div.className = "filter-group";
+    div.innerHTML = `<div class="group-label">${g.label}</div>`;
+    const chips = document.createElement("div");
+    chips.className = "chips";
+    for (const [token, label] of Object.entries(FILTER_LABELS[g.key])) {
+      const chip = document.createElement("div");
+      chip.className = "chip" + (state[g.key].has(token) ? " on" : "");
+      chip.textContent = label;
+      chip.onclick = () => {
+        if (state[g.key].has(token)) {
+          if (state[g.key].size > 1) state[g.key].delete(token);
+        } else {
+          state[g.key].add(token);
+        }
+        renderFilters();
+        renderTable();
+      };
+      chips.appendChild(chip);
+    }
+    div.appendChild(chips);
+    container.insertBefore(div, actions);
+  }
+}
+
+// ---- Render: table ----
+function applyFilter() {
+  return ALL_CASES.filter(c =>
+    state.dataset.has(c.dataset) &&
+    state.mode.has(c.mode) &&
+    state.src.has(c.src) &&
+    state.codec.has(c.codec) &&
+    state.parsing.has(c.parsing)
+  );
+}
+
+function applySort(rows) {
+  const { key, dir } = state.sort;
+  const cmp = (a,b) => {
+    let av, bv;
+    if (key === "ratio") { av = a.ratio; bv = b.ratio; }
+    else if (key === "size") { av = a.size; bv = b.size; }
+    else if (key === "case") { av = a.case_name; bv = b.case_name; }
+    else if (key === "dataset") { av = a.dataset; bv = b.dataset; }
+    else { av = a[key]; bv = b[key]; }
+    if (av < bv) return dir === "asc" ? -1 : 1;
+    if (av > bv) return dir === "asc" ?  1 : -1;
+    return 0;
+  };
+  return [...rows].sort(cmp);
+}
+
+function renderTable() {
+  const rows = applySort(applyFilter());
+  renderStats(rows);
+
+  // Show TSDS-web warning when relevant
+  const showWarn = rows.some(r => r.dataset === "web" && r.mode === "tsds");
+  document.getElementById("note-tsds-web").style.display = showWarn ? "" : "none";
+
+  const tbody = document.getElementById("tbody");
+  tbody.innerHTML = "";
+  if (rows.length === 0) {
+    const tr = document.createElement("tr");
+    tr.innerHTML = `<td colspan="8" class="empty">필터 조건에 맞는 케이스가 없습니다.</td>`;
+    tbody.appendChild(tr);
+  } else {
+    for (const r of rows) {
+      const tr = document.createElement("tr");
+      const tone = r.ratio < 0.999 ? "good" : r.ratio > 1.001 ? "bad" : "neutral";
+      tr.innerHTML = `
+        <td><span class="ds-pill ds-${r.dataset}">${r.dataset}</span></td>
+        <td class="case-name">${r.case_name}</td>
+        <td>${TOKEN_LABELS.mode[r.mode]}${r.warn ? ' <span class="badge warn" title="' + r.warn + '">⚠</span>' : ''}</td>
+        <td>${TOKEN_LABELS.src[r.src]}</td>
+        <td>${TOKEN_LABELS.codec[r.codec]}</td>
+        <td>${r.parsing}</td>
+        <td class="num">${fmtBytes(r.size)}</td>
+        <td class="num"><span class="badge ${tone}">${fmtDelta(r.ratio)}</span></td>
+      `;
+      tbody.appendChild(tr);
+    }
+  }
+  document.getElementById("count").textContent = `${rows.length} / ${ALL_CASES.length} 케이스 표시 중`;
+
+  // Update sort arrows
+  document.querySelectorAll("#tbl thead th").forEach(th => {
+    const k = th.dataset.k;
+    const arrow = th.querySelector(".arrow");
+    if (!arrow) return;
+    if (k === state.sort.key) arrow.textContent = state.sort.dir === "asc" ? "▲" : "▼";
+    else arrow.textContent = "";
+  });
+}
+
+function renderStats(rows) {
+  const el = document.getElementById("stats");
+  el.innerHTML = "";
+  if (rows.length === 0) return;
+  const best = rows.reduce((a,b) => a.ratio < b.ratio ? a : b);
+  const worst = rows.reduce((a,b) => a.ratio > b.ratio ? a : b);
+  const avg = rows.reduce((s,r) => s + r.ratio, 0) / rows.length;
+
+  el.innerHTML = `
+    <div class="stat-card best">
+      <div class="label">베스트 (가장 작은 저장)</div>
+      <div class="value">${fmtDelta(best.ratio)}</div>
+      <div class="sub">${best.case_name} · ${best.dataset}</div>
+      <div class="sub">${fmtBytes(best.size)} / raw ${fmtBytes(best.raw_bytes)}</div>
+    </div>
+    <div class="stat-card worst">
+      <div class="label">워스트 (가장 큰 저장)</div>
+      <div class="value">${fmtDelta(worst.ratio)}</div>
+      <div class="sub">${worst.case_name} · ${worst.dataset}</div>
+      <div class="sub">${fmtBytes(worst.size)} / raw ${fmtBytes(worst.raw_bytes)}</div>
+    </div>
+    <div class="stat-card">
+      <div class="label">필터 평균</div>
+      <div class="value" style="color:#475569">${fmtDelta(avg)}</div>
+      <div class="sub">${rows.length}개 케이스 기준</div>
+    </div>
+  `;
+}
+
+// ---- Wire up ----
+document.querySelectorAll("#tbl thead th").forEach(th => {
+  th.onclick = () => {
+    const k = th.dataset.k;
+    if (!k) return;
+    if (state.sort.key === k) {
+      state.sort.dir = state.sort.dir === "asc" ? "desc" : "asc";
+    } else {
+      state.sort.key = k;
+      state.sort.dir = "asc";
+    }
+    renderTable();
+  };
+});
+document.getElementById("reset").onclick = () => {
+  state.dataset = new Set(["firewall","web","snmp"]);
+  state.mode    = new Set(["std","ldb","tsds"]);
+  state.src     = new Set(["str","syn"]);
+  state.codec   = new Set(["lz4","zstd"]);
+  state.parsing = new Set(["p1","p2","p3"]);
+  renderFilters();
+  renderTable();
+};
+
+renderFilters();
+renderTable();
+</script>
+
+</body>
+</html>
