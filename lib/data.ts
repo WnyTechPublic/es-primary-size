@@ -15,12 +15,25 @@ function unique<T extends string>(values: (T | undefined)[]): T[] {
   return Array.from(new Set(values.filter((v): v is T => Boolean(v)))).sort();
 }
 
+function orderedUnique<T extends string>(
+  values: (T | undefined)[],
+  order: readonly T[],
+): T[] {
+  const rank = new Map(order.map((value, index) => [value, index]));
+  return Array.from(new Set(values.filter((v): v is T => Boolean(v)))).sort(
+    (a, b) => (rank.get(a) ?? Number.MAX_SAFE_INTEGER) - (rank.get(b) ?? Number.MAX_SAFE_INTEGER)
+      || a.localeCompare(b),
+  );
+}
+
+const SOURCE_TYPE_ORDER = ["firewall", "service", "metric"] as const;
+
 const OPTIONS = {
   index_mode:  unique(RESULTS.records.map((r) => r.index_mode)),
   _source:     unique(RESULTS.records.map((r) => r._source)),
   codec:       unique(RESULTS.records.map((r) => r.codec)),
   parse_type:  unique(RESULTS.records.map((r) => r.parse_type)),
-  source_type: unique(RESULTS.records.map((r) => r.source_type)),
+  source_type: orderedUnique(RESULTS.records.map((r) => r.source_type), SOURCE_TYPE_ORDER),
 };
 
 function matches(rec: CaseRecord, f: FilterParams): boolean {
