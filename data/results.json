@@ -1,0 +1,3447 @@
+{
+  "meta": {
+    "measured_at": "2026-06-09T02:02:31.423187+00:00",
+    "es_version": "9.4.2",
+    "raw_size_per_source_bytes": {
+      "firewall": 10486256,
+      "service": 10485787,
+      "metric": 10485777
+    },
+    "total_targets": 123,
+    "detailed": true
+  },
+  "records": [
+    {
+      "label": "baseline-firewall",
+      "datastream": "logs-baseline-firewall",
+      "source_type": "firewall",
+      "role": "baseline",
+      "docs": 17944,
+      "raw_bytes": 10486256,
+      "primary_bytes": 3289911,
+      "total_bytes": 3289911,
+      "compression_ratio": 0.3137,
+      "backing_indices": [
+        ".ds-logs-baseline-firewall-2026.06.09-000001"
+      ],
+      "disk_usage": {
+        "inverted_index": 103069,
+        "stored_fields": 3104570,
+        "doc_values": 53832,
+        "points": 19949,
+        "bloom_filter": 0,
+        "norms": 0,
+        "term_vectors": 0,
+        "knn_vectors": 0
+      }
+    },
+    {
+      "label": "baseline-metric",
+      "datastream": "logs-baseline-metric",
+      "source_type": "metric",
+      "role": "baseline",
+      "docs": 208944,
+      "raw_bytes": 10485777,
+      "primary_bytes": 7357247,
+      "total_bytes": 7357247,
+      "compression_ratio": 0.7016,
+      "backing_indices": [
+        ".ds-logs-baseline-metric-2026.06.09-000001"
+      ],
+      "disk_usage": {
+        "inverted_index": 1156031,
+        "stored_fields": 5217506,
+        "doc_values": 731863,
+        "points": 231717,
+        "bloom_filter": 0,
+        "norms": 0,
+        "term_vectors": 0,
+        "knn_vectors": 0
+      }
+    },
+    {
+      "label": "baseline-service",
+      "datastream": "logs-baseline-service",
+      "source_type": "service",
+      "role": "baseline",
+      "docs": 32224,
+      "raw_bytes": 10485787,
+      "primary_bytes": 3459925,
+      "total_bytes": 3459925,
+      "compression_ratio": 0.33,
+      "backing_indices": [
+        ".ds-logs-baseline-service-2026.06.09-000001"
+      ],
+      "disk_usage": {
+        "inverted_index": 187563,
+        "stored_fields": 3126600,
+        "doc_values": 96672,
+        "points": 35729,
+        "bloom_filter": 0,
+        "norms": 0,
+        "term_vectors": 0,
+        "knn_vectors": 0
+      }
+    },
+    {
+      "label": "logs-logsdb.str.lz4.oap-firewall",
+      "datastream": "logs-logsdb.str.lz4.oap-firewall",
+      "source_type": "firewall",
+      "role": "case",
+      "index_mode": "logsdb",
+      "_source": "str",
+      "codec": "lz4",
+      "parse_type": "oap",
+      "docs": 17944,
+      "raw_bytes": 10486256,
+      "primary_bytes": 10527374,
+      "total_bytes": 10527374,
+      "compression_ratio": 1.0039,
+      "backing_indices": [
+        ".ds-logs-logsdb.str.lz4.oap-firewall-2026.06.09-000001"
+      ],
+      "disk_usage": {
+        "inverted_index": 479807,
+        "stored_fields": 7554984,
+        "doc_values": 1263370,
+        "points": 1178568,
+        "bloom_filter": 0,
+        "norms": 0,
+        "term_vectors": 0,
+        "knn_vectors": 0
+      }
+    },
+    {
+      "label": "logs-logsdb.str.lz4.oap-metric",
+      "datastream": "logs-logsdb.str.lz4.oap-metric",
+      "source_type": "metric",
+      "role": "case",
+      "index_mode": "logsdb",
+      "_source": "str",
+      "codec": "lz4",
+      "parse_type": "oap",
+      "docs": 208944,
+      "raw_bytes": 10485777,
+      "primary_bytes": 11127154,
+      "total_bytes": 11127154,
+      "compression_ratio": 1.0612,
+      "backing_indices": [
+        ".ds-logs-logsdb.str.lz4.oap-metric-2026.06.09-000001"
+      ],
+      "disk_usage": {
+        "inverted_index": 1176964,
+        "stored_fields": 7274501,
+        "doc_values": 731916,
+        "points": 1920165,
+        "bloom_filter": 0,
+        "norms": 0,
+        "term_vectors": 0,
+        "knn_vectors": 0
+      }
+    },
+    {
+      "label": "logs-logsdb.str.lz4.oap-service",
+      "datastream": "logs-logsdb.str.lz4.oap-service",
+      "source_type": "service",
+      "role": "case",
+      "index_mode": "logsdb",
+      "_source": "str",
+      "codec": "lz4",
+      "parse_type": "oap",
+      "docs": 32224,
+      "raw_bytes": 10485787,
+      "primary_bytes": 10135680,
+      "total_bytes": 10135680,
+      "compression_ratio": 0.9666,
+      "backing_indices": [
+        ".ds-logs-logsdb.str.lz4.oap-service-2026.06.09-000001"
+      ],
+      "disk_usage": {
+        "inverted_index": 1316168,
+        "stored_fields": 7352821,
+        "doc_values": 1108306,
+        "points": 314455,
+        "bloom_filter": 0,
+        "norms": 0,
+        "term_vectors": 0,
+        "knn_vectors": 0
+      }
+    },
+    {
+      "label": "logs-logsdb.str.lz4.oo-firewall",
+      "datastream": "logs-logsdb.str.lz4.oo-firewall",
+      "source_type": "firewall",
+      "role": "case",
+      "index_mode": "logsdb",
+      "_source": "str",
+      "codec": "lz4",
+      "parse_type": "oo",
+      "docs": 17944,
+      "raw_bytes": 10486256,
+      "primary_bytes": 3246965,
+      "total_bytes": 3246965,
+      "compression_ratio": 0.3096,
+      "backing_indices": [
+        ".ds-logs-logsdb.str.lz4.oo-firewall-2026.06.09-000001"
+      ],
+      "disk_usage": {
+        "inverted_index": 103285,
+        "stored_fields": 3114575,
+        "doc_values": 21437,
+        "points": 0,
+        "bloom_filter": 0,
+        "norms": 0,
+        "term_vectors": 0,
+        "knn_vectors": 0
+      }
+    },
+    {
+      "label": "logs-logsdb.str.lz4.oo-metric",
+      "datastream": "logs-logsdb.str.lz4.oo-metric",
+      "source_type": "metric",
+      "role": "case",
+      "index_mode": "logsdb",
+      "_source": "str",
+      "codec": "lz4",
+      "parse_type": "oo",
+      "docs": 208944,
+      "raw_bytes": 10485777,
+      "primary_bytes": 6618525,
+      "total_bytes": 6618525,
+      "compression_ratio": 0.6312,
+      "backing_indices": [
+        ".ds-logs-logsdb.str.lz4.oo-metric-2026.06.09-000001"
+      ],
+      "disk_usage": {
+        "inverted_index": 1154578,
+        "stored_fields": 5231831,
+        "doc_values": 211799,
+        "points": 0,
+        "bloom_filter": 0,
+        "norms": 0,
+        "term_vectors": 0,
+        "knn_vectors": 0
+      }
+    },
+    {
+      "label": "logs-logsdb.str.lz4.oo-service",
+      "datastream": "logs-logsdb.str.lz4.oo-service",
+      "source_type": "service",
+      "role": "case",
+      "index_mode": "logsdb",
+      "_source": "str",
+      "codec": "lz4",
+      "parse_type": "oo",
+      "docs": 32224,
+      "raw_bytes": 10485787,
+      "primary_bytes": 3369960,
+      "total_bytes": 3369960,
+      "compression_ratio": 0.3214,
+      "backing_indices": [
+        ".ds-logs-logsdb.str.lz4.oo-service-2026.06.09-000001"
+      ],
+      "disk_usage": {
+        "inverted_index": 187878,
+        "stored_fields": 3134706,
+        "doc_values": 35562,
+        "points": 0,
+        "bloom_filter": 0,
+        "norms": 0,
+        "term_vectors": 0,
+        "knn_vectors": 0
+      }
+    },
+    {
+      "label": "logs-logsdb.str.lz4.po-firewall",
+      "datastream": "logs-logsdb.str.lz4.po-firewall",
+      "source_type": "firewall",
+      "role": "case",
+      "index_mode": "logsdb",
+      "_source": "str",
+      "codec": "lz4",
+      "parse_type": "po",
+      "docs": 17944,
+      "raw_bytes": 10486256,
+      "primary_bytes": 7007790,
+      "total_bytes": 7007790,
+      "compression_ratio": 0.6683,
+      "backing_indices": [
+        ".ds-logs-logsdb.str.lz4.po-firewall-2026.06.09-000001"
+      ],
+      "disk_usage": {
+        "inverted_index": 479807,
+        "stored_fields": 4035396,
+        "doc_values": 1263370,
+        "points": 1178568,
+        "bloom_filter": 0,
+        "norms": 0,
+        "term_vectors": 0,
+        "knn_vectors": 0
+      }
+    },
+    {
+      "label": "logs-logsdb.str.lz4.po-metric",
+      "datastream": "logs-logsdb.str.lz4.po-metric",
+      "source_type": "metric",
+      "role": "case",
+      "index_mode": "logsdb",
+      "_source": "str",
+      "codec": "lz4",
+      "parse_type": "po",
+      "docs": 208944,
+      "raw_bytes": 10485777,
+      "primary_bytes": 8447077,
+      "total_bytes": 8447077,
+      "compression_ratio": 0.8056,
+      "backing_indices": [
+        ".ds-logs-logsdb.str.lz4.po-metric-2026.06.09-000001"
+      ],
+      "disk_usage": {
+        "inverted_index": 1176964,
+        "stored_fields": 4594429,
+        "doc_values": 731916,
+        "points": 1920165,
+        "bloom_filter": 0,
+        "norms": 0,
+        "term_vectors": 0,
+        "knn_vectors": 0
+      }
+    },
+    {
+      "label": "logs-logsdb.str.lz4.po-service",
+      "datastream": "logs-logsdb.str.lz4.po-service",
+      "source_type": "service",
+      "role": "case",
+      "index_mode": "logsdb",
+      "_source": "str",
+      "codec": "lz4",
+      "parse_type": "po",
+      "docs": 32224,
+      "raw_bytes": 10485787,
+      "primary_bytes": 6580491,
+      "total_bytes": 6580491,
+      "compression_ratio": 0.6276,
+      "backing_indices": [
+        ".ds-logs-logsdb.str.lz4.po-service-2026.06.09-000001"
+      ],
+      "disk_usage": {
+        "inverted_index": 1316168,
+        "stored_fields": 3797625,
+        "doc_values": 1108306,
+        "points": 314455,
+        "bloom_filter": 0,
+        "norms": 0,
+        "term_vectors": 0,
+        "knn_vectors": 0
+      }
+    },
+    {
+      "label": "logs-logsdb.str.zstd.oap-firewall",
+      "datastream": "logs-logsdb.str.zstd.oap-firewall",
+      "source_type": "firewall",
+      "role": "case",
+      "index_mode": "logsdb",
+      "_source": "str",
+      "codec": "zstd",
+      "parse_type": "oap",
+      "docs": 17944,
+      "raw_bytes": 10486256,
+      "primary_bytes": 6481684,
+      "total_bytes": 6481684,
+      "compression_ratio": 0.6181,
+      "backing_indices": [
+        ".ds-logs-logsdb.str.zstd.oap-firewall-2026.06.09-000001"
+      ],
+      "disk_usage": {
+        "inverted_index": 479807,
+        "stored_fields": 3509242,
+        "doc_values": 1263370,
+        "points": 1178568,
+        "bloom_filter": 0,
+        "norms": 0,
+        "term_vectors": 0,
+        "knn_vectors": 0
+      }
+    },
+    {
+      "label": "logs-logsdb.str.zstd.oap-metric",
+      "datastream": "logs-logsdb.str.zstd.oap-metric",
+      "source_type": "metric",
+      "role": "case",
+      "index_mode": "logsdb",
+      "_source": "str",
+      "codec": "zstd",
+      "parse_type": "oap",
+      "docs": 208944,
+      "raw_bytes": 10485777,
+      "primary_bytes": 7442241,
+      "total_bytes": 7442241,
+      "compression_ratio": 0.7097,
+      "backing_indices": [
+        ".ds-logs-logsdb.str.zstd.oap-metric-2026.06.09-000001"
+      ],
+      "disk_usage": {
+        "inverted_index": 1176964,
+        "stored_fields": 3589563,
+        "doc_values": 731916,
+        "points": 1920165,
+        "bloom_filter": 0,
+        "norms": 0,
+        "term_vectors": 0,
+        "knn_vectors": 0
+      }
+    },
+    {
+      "label": "logs-logsdb.str.zstd.oap-service",
+      "datastream": "logs-logsdb.str.zstd.oap-service",
+      "source_type": "service",
+      "role": "case",
+      "index_mode": "logsdb",
+      "_source": "str",
+      "codec": "zstd",
+      "parse_type": "oap",
+      "docs": 32224,
+      "raw_bytes": 10485787,
+      "primary_bytes": 6036015,
+      "total_bytes": 6036015,
+      "compression_ratio": 0.5756,
+      "backing_indices": [
+        ".ds-logs-logsdb.str.zstd.oap-service-2026.06.09-000001"
+      ],
+      "disk_usage": {
+        "inverted_index": 1316168,
+        "stored_fields": 3253150,
+        "doc_values": 1108306,
+        "points": 314455,
+        "bloom_filter": 0,
+        "norms": 0,
+        "term_vectors": 0,
+        "knn_vectors": 0
+      }
+    },
+    {
+      "label": "logs-logsdb.str.zstd.oo-firewall",
+      "datastream": "logs-logsdb.str.zstd.oo-firewall",
+      "source_type": "firewall",
+      "role": "case",
+      "index_mode": "logsdb",
+      "_source": "str",
+      "codec": "zstd",
+      "parse_type": "oo",
+      "docs": 17944,
+      "raw_bytes": 10486256,
+      "primary_bytes": 1893951,
+      "total_bytes": 1893951,
+      "compression_ratio": 0.1806,
+      "backing_indices": [
+        ".ds-logs-logsdb.str.zstd.oo-firewall-2026.06.09-000001"
+      ],
+      "disk_usage": {
+        "inverted_index": 103285,
+        "stored_fields": 1761554,
+        "doc_values": 21437,
+        "points": 0,
+        "bloom_filter": 0,
+        "norms": 0,
+        "term_vectors": 0,
+        "knn_vectors": 0
+      }
+    },
+    {
+      "label": "logs-logsdb.str.zstd.oo-metric",
+      "datastream": "logs-logsdb.str.zstd.oo-metric",
+      "source_type": "metric",
+      "role": "case",
+      "index_mode": "logsdb",
+      "_source": "str",
+      "codec": "zstd",
+      "parse_type": "oo",
+      "docs": 208944,
+      "raw_bytes": 10485777,
+      "primary_bytes": 4775905,
+      "total_bytes": 4775905,
+      "compression_ratio": 0.4555,
+      "backing_indices": [
+        ".ds-logs-logsdb.str.zstd.oo-metric-2026.06.09-000001"
+      ],
+      "disk_usage": {
+        "inverted_index": 1154578,
+        "stored_fields": 3389221,
+        "doc_values": 211799,
+        "points": 0,
+        "bloom_filter": 0,
+        "norms": 0,
+        "term_vectors": 0,
+        "knn_vectors": 0
+      }
+    },
+    {
+      "label": "logs-logsdb.str.zstd.oo-service",
+      "datastream": "logs-logsdb.str.zstd.oo-service",
+      "source_type": "service",
+      "role": "case",
+      "index_mode": "logsdb",
+      "_source": "str",
+      "codec": "zstd",
+      "parse_type": "oo",
+      "docs": 32224,
+      "raw_bytes": 10485787,
+      "primary_bytes": 1879284,
+      "total_bytes": 1879284,
+      "compression_ratio": 0.1792,
+      "backing_indices": [
+        ".ds-logs-logsdb.str.zstd.oo-service-2026.06.09-000001"
+      ],
+      "disk_usage": {
+        "inverted_index": 187878,
+        "stored_fields": 1644027,
+        "doc_values": 35562,
+        "points": 0,
+        "bloom_filter": 0,
+        "norms": 0,
+        "term_vectors": 0,
+        "knn_vectors": 0
+      }
+    },
+    {
+      "label": "logs-logsdb.str.zstd.po-firewall",
+      "datastream": "logs-logsdb.str.zstd.po-firewall",
+      "source_type": "firewall",
+      "role": "case",
+      "index_mode": "logsdb",
+      "_source": "str",
+      "codec": "zstd",
+      "parse_type": "po",
+      "docs": 17944,
+      "raw_bytes": 10486256,
+      "primary_bytes": 5096361,
+      "total_bytes": 5096361,
+      "compression_ratio": 0.486,
+      "backing_indices": [
+        ".ds-logs-logsdb.str.zstd.po-firewall-2026.06.09-000001"
+      ],
+      "disk_usage": {
+        "inverted_index": 479807,
+        "stored_fields": 2123918,
+        "doc_values": 1263370,
+        "points": 1178568,
+        "bloom_filter": 0,
+        "norms": 0,
+        "term_vectors": 0,
+        "knn_vectors": 0
+      }
+    },
+    {
+      "label": "logs-logsdb.str.zstd.po-metric",
+      "datastream": "logs-logsdb.str.zstd.po-metric",
+      "source_type": "metric",
+      "role": "case",
+      "index_mode": "logsdb",
+      "_source": "str",
+      "codec": "zstd",
+      "parse_type": "po",
+      "docs": 208944,
+      "raw_bytes": 10485777,
+      "primary_bytes": 6386443,
+      "total_bytes": 6386443,
+      "compression_ratio": 0.6091,
+      "backing_indices": [
+        ".ds-logs-logsdb.str.zstd.po-metric-2026.06.09-000001"
+      ],
+      "disk_usage": {
+        "inverted_index": 1176964,
+        "stored_fields": 2533768,
+        "doc_values": 731916,
+        "points": 1920165,
+        "bloom_filter": 0,
+        "norms": 0,
+        "term_vectors": 0,
+        "knn_vectors": 0
+      }
+    },
+    {
+      "label": "logs-logsdb.str.zstd.po-service",
+      "datastream": "logs-logsdb.str.zstd.po-service",
+      "source_type": "service",
+      "role": "case",
+      "index_mode": "logsdb",
+      "_source": "str",
+      "codec": "zstd",
+      "parse_type": "po",
+      "docs": 32224,
+      "raw_bytes": 10485787,
+      "primary_bytes": 4702177,
+      "total_bytes": 4702177,
+      "compression_ratio": 0.4484,
+      "backing_indices": [
+        ".ds-logs-logsdb.str.zstd.po-service-2026.06.09-000001"
+      ],
+      "disk_usage": {
+        "inverted_index": 1316168,
+        "stored_fields": 1919354,
+        "doc_values": 1108306,
+        "points": 314455,
+        "bloom_filter": 0,
+        "norms": 0,
+        "term_vectors": 0,
+        "knn_vectors": 0
+      }
+    },
+    {
+      "label": "logs-logsdb.syn.lz4.oap-firewall",
+      "datastream": "logs-logsdb.syn.lz4.oap-firewall",
+      "source_type": "firewall",
+      "role": "case",
+      "index_mode": "logsdb",
+      "_source": "syn",
+      "codec": "lz4",
+      "parse_type": "oap",
+      "docs": 17944,
+      "raw_bytes": 10486256,
+      "primary_bytes": 5957733,
+      "total_bytes": 5957733,
+      "compression_ratio": 0.5681,
+      "backing_indices": [
+        ".ds-logs-logsdb.syn.lz4.oap-firewall-2026.06.09-000001"
+      ],
+      "disk_usage": {
+        "inverted_index": 479807,
+        "stored_fields": 2966836,
+        "doc_values": 1281317,
+        "points": 1178568,
+        "bloom_filter": 0,
+        "norms": 0,
+        "term_vectors": 0,
+        "knn_vectors": 0
+      }
+    },
+    {
+      "label": "logs-logsdb.syn.lz4.oap-metric",
+      "datastream": "logs-logsdb.syn.lz4.oap-metric",
+      "source_type": "metric",
+      "role": "case",
+      "index_mode": "logsdb",
+      "_source": "syn",
+      "codec": "lz4",
+      "parse_type": "oap",
+      "docs": 208944,
+      "raw_bytes": 10485777,
+      "primary_bytes": 7339801,
+      "total_bytes": 7339801,
+      "compression_ratio": 0.7,
+      "backing_indices": [
+        ".ds-logs-logsdb.syn.lz4.oap-metric-2026.06.09-000001"
+      ],
+      "disk_usage": {
+        "inverted_index": 1176964,
+        "stored_fields": 3456940,
+        "doc_values": 761897,
+        "points": 1920165,
+        "bloom_filter": 0,
+        "norms": 0,
+        "term_vectors": 0,
+        "knn_vectors": 0
+      }
+    },
+    {
+      "label": "logs-logsdb.syn.lz4.oap-service",
+      "datastream": "logs-logsdb.syn.lz4.oap-service",
+      "source_type": "service",
+      "role": "case",
+      "index_mode": "logsdb",
+      "_source": "syn",
+      "codec": "lz4",
+      "parse_type": "oap",
+      "docs": 32224,
+      "raw_bytes": 10485787,
+      "primary_bytes": 5675288,
+      "total_bytes": 5675288,
+      "compression_ratio": 0.5412,
+      "backing_indices": [
+        ".ds-logs-logsdb.syn.lz4.oap-service-2026.06.09-000001"
+      ],
+      "disk_usage": {
+        "inverted_index": 1316168,
+        "stored_fields": 2858477,
+        "doc_values": 1140533,
+        "points": 314455,
+        "bloom_filter": 0,
+        "norms": 0,
+        "term_vectors": 0,
+        "knn_vectors": 0
+      }
+    },
+    {
+      "label": "logs-logsdb.syn.lz4.oo-firewall",
+      "datastream": "logs-logsdb.syn.lz4.oo-firewall",
+      "source_type": "firewall",
+      "role": "case",
+      "index_mode": "logsdb",
+      "_source": "syn",
+      "codec": "lz4",
+      "parse_type": "oo",
+      "docs": 17944,
+      "raw_bytes": 10486256,
+      "primary_bytes": 3115718,
+      "total_bytes": 3115718,
+      "compression_ratio": 0.2971,
+      "backing_indices": [
+        ".ds-logs-logsdb.syn.lz4.oo-firewall-2026.06.09-000001"
+      ],
+      "disk_usage": {
+        "inverted_index": 103285,
+        "stored_fields": 2965183,
+        "doc_values": 39381,
+        "points": 0,
+        "bloom_filter": 0,
+        "norms": 0,
+        "term_vectors": 0,
+        "knn_vectors": 0
+      }
+    },
+    {
+      "label": "logs-logsdb.syn.lz4.oo-metric",
+      "datastream": "logs-logsdb.syn.lz4.oo-metric",
+      "source_type": "metric",
+      "role": "case",
+      "index_mode": "logsdb",
+      "_source": "syn",
+      "codec": "lz4",
+      "parse_type": "oo",
+      "docs": 208944,
+      "raw_bytes": 10485777,
+      "primary_bytes": 4974121,
+      "total_bytes": 4974121,
+      "compression_ratio": 0.4744,
+      "backing_indices": [
+        ".ds-logs-logsdb.syn.lz4.oo-metric-2026.06.09-000001"
+      ],
+      "disk_usage": {
+        "inverted_index": 1154578,
+        "stored_fields": 3482791,
+        "doc_values": 316271,
+        "points": 0,
+        "bloom_filter": 0,
+        "norms": 0,
+        "term_vectors": 0,
+        "knn_vectors": 0
+      }
+    },
+    {
+      "label": "logs-logsdb.syn.lz4.oo-service",
+      "datastream": "logs-logsdb.syn.lz4.oo-service",
+      "source_type": "service",
+      "role": "case",
+      "index_mode": "logsdb",
+      "_source": "syn",
+      "codec": "lz4",
+      "parse_type": "oo",
+      "docs": 32224,
+      "raw_bytes": 10485787,
+      "primary_bytes": 3123367,
+      "total_bytes": 3123367,
+      "compression_ratio": 0.2979,
+      "backing_indices": [
+        ".ds-logs-logsdb.syn.lz4.oo-service-2026.06.09-000001"
+      ],
+      "disk_usage": {
+        "inverted_index": 187878,
+        "stored_fields": 2855736,
+        "doc_values": 67786,
+        "points": 0,
+        "bloom_filter": 0,
+        "norms": 0,
+        "term_vectors": 0,
+        "knn_vectors": 0
+      }
+    },
+    {
+      "label": "logs-logsdb.syn.lz4.po-firewall",
+      "datastream": "logs-logsdb.syn.lz4.po-firewall",
+      "source_type": "firewall",
+      "role": "case",
+      "index_mode": "logsdb",
+      "_source": "syn",
+      "codec": "lz4",
+      "parse_type": "po",
+      "docs": 17944,
+      "raw_bytes": 10486256,
+      "primary_bytes": 3091447,
+      "total_bytes": 3091447,
+      "compression_ratio": 0.2948,
+      "backing_indices": [
+        ".ds-logs-logsdb.syn.lz4.po-firewall-2026.06.09-000001"
+      ],
+      "disk_usage": {
+        "inverted_index": 479807,
+        "stored_fields": 100617,
+        "doc_values": 1281317,
+        "points": 1178568,
+        "bloom_filter": 0,
+        "norms": 0,
+        "term_vectors": 0,
+        "knn_vectors": 0
+      }
+    },
+    {
+      "label": "logs-logsdb.syn.lz4.po-metric",
+      "datastream": "logs-logsdb.syn.lz4.po-metric",
+      "source_type": "metric",
+      "role": "case",
+      "index_mode": "logsdb",
+      "_source": "syn",
+      "codec": "lz4",
+      "parse_type": "po",
+      "docs": 208944,
+      "raw_bytes": 10485777,
+      "primary_bytes": 5033984,
+      "total_bytes": 5033984,
+      "compression_ratio": 0.4801,
+      "backing_indices": [
+        ".ds-logs-logsdb.syn.lz4.po-metric-2026.06.09-000001"
+      ],
+      "disk_usage": {
+        "inverted_index": 1176964,
+        "stored_fields": 1151080,
+        "doc_values": 761897,
+        "points": 1920165,
+        "bloom_filter": 0,
+        "norms": 0,
+        "term_vectors": 0,
+        "knn_vectors": 0
+      }
+    },
+    {
+      "label": "logs-logsdb.syn.lz4.po-service",
+      "datastream": "logs-logsdb.syn.lz4.po-service",
+      "source_type": "service",
+      "role": "case",
+      "index_mode": "logsdb",
+      "_source": "syn",
+      "codec": "lz4",
+      "parse_type": "po",
+      "docs": 32224,
+      "raw_bytes": 10485787,
+      "primary_bytes": 2992318,
+      "total_bytes": 2992318,
+      "compression_ratio": 0.2854,
+      "backing_indices": [
+        ".ds-logs-logsdb.syn.lz4.po-service-2026.06.09-000001"
+      ],
+      "disk_usage": {
+        "inverted_index": 1316168,
+        "stored_fields": 176738,
+        "doc_values": 1140533,
+        "points": 314455,
+        "bloom_filter": 0,
+        "norms": 0,
+        "term_vectors": 0,
+        "knn_vectors": 0
+      }
+    },
+    {
+      "label": "logs-logsdb.syn.zstd.oap-firewall",
+      "datastream": "logs-logsdb.syn.zstd.oap-firewall",
+      "source_type": "firewall",
+      "role": "case",
+      "index_mode": "logsdb",
+      "_source": "syn",
+      "codec": "zstd",
+      "parse_type": "oap",
+      "docs": 17944,
+      "raw_bytes": 10486256,
+      "primary_bytes": 4686916,
+      "total_bytes": 4686916,
+      "compression_ratio": 0.447,
+      "backing_indices": [
+        ".ds-logs-logsdb.syn.zstd.oap-firewall-2026.06.09-000001"
+      ],
+      "disk_usage": {
+        "inverted_index": 479807,
+        "stored_fields": 1695985,
+        "doc_values": 1281317,
+        "points": 1178568,
+        "bloom_filter": 0,
+        "norms": 0,
+        "term_vectors": 0,
+        "knn_vectors": 0
+      }
+    },
+    {
+      "label": "logs-logsdb.syn.zstd.oap-metric",
+      "datastream": "logs-logsdb.syn.zstd.oap-metric",
+      "source_type": "metric",
+      "role": "case",
+      "index_mode": "logsdb",
+      "_source": "syn",
+      "codec": "zstd",
+      "parse_type": "oap",
+      "docs": 208944,
+      "raw_bytes": 10485777,
+      "primary_bytes": 5920163,
+      "total_bytes": 5920163,
+      "compression_ratio": 0.5646,
+      "backing_indices": [
+        ".ds-logs-logsdb.syn.zstd.oap-metric-2026.06.09-000001"
+      ],
+      "disk_usage": {
+        "inverted_index": 1176964,
+        "stored_fields": 2037296,
+        "doc_values": 761897,
+        "points": 1920165,
+        "bloom_filter": 0,
+        "norms": 0,
+        "term_vectors": 0,
+        "knn_vectors": 0
+      }
+    },
+    {
+      "label": "logs-logsdb.syn.zstd.oap-service",
+      "datastream": "logs-logsdb.syn.zstd.oap-service",
+      "source_type": "service",
+      "role": "case",
+      "index_mode": "logsdb",
+      "_source": "syn",
+      "codec": "zstd",
+      "parse_type": "oap",
+      "docs": 32224,
+      "raw_bytes": 10485787,
+      "primary_bytes": 4311069,
+      "total_bytes": 4311069,
+      "compression_ratio": 0.4111,
+      "backing_indices": [
+        ".ds-logs-logsdb.syn.zstd.oap-service-2026.06.09-000001"
+      ],
+      "disk_usage": {
+        "inverted_index": 1316168,
+        "stored_fields": 1494253,
+        "doc_values": 1140533,
+        "points": 314455,
+        "bloom_filter": 0,
+        "norms": 0,
+        "term_vectors": 0,
+        "knn_vectors": 0
+      }
+    },
+    {
+      "label": "logs-logsdb.syn.zstd.oo-firewall",
+      "datastream": "logs-logsdb.syn.zstd.oo-firewall",
+      "source_type": "firewall",
+      "role": "case",
+      "index_mode": "logsdb",
+      "_source": "syn",
+      "codec": "zstd",
+      "parse_type": "oo",
+      "docs": 17944,
+      "raw_bytes": 10486256,
+      "primary_bytes": 1844836,
+      "total_bytes": 1844836,
+      "compression_ratio": 0.1759,
+      "backing_indices": [
+        ".ds-logs-logsdb.syn.zstd.oo-firewall-2026.06.09-000001"
+      ],
+      "disk_usage": {
+        "inverted_index": 103285,
+        "stored_fields": 1694288,
+        "doc_values": 39381,
+        "points": 0,
+        "bloom_filter": 0,
+        "norms": 0,
+        "term_vectors": 0,
+        "knn_vectors": 0
+      }
+    },
+    {
+      "label": "logs-logsdb.syn.zstd.oo-metric",
+      "datastream": "logs-logsdb.syn.zstd.oo-metric",
+      "source_type": "metric",
+      "role": "case",
+      "index_mode": "logsdb",
+      "_source": "syn",
+      "codec": "zstd",
+      "parse_type": "oo",
+      "docs": 208944,
+      "raw_bytes": 10485777,
+      "primary_bytes": 3531872,
+      "total_bytes": 3531872,
+      "compression_ratio": 0.3368,
+      "backing_indices": [
+        ".ds-logs-logsdb.syn.zstd.oo-metric-2026.06.09-000001"
+      ],
+      "disk_usage": {
+        "inverted_index": 1154578,
+        "stored_fields": 2040556,
+        "doc_values": 316271,
+        "points": 0,
+        "bloom_filter": 0,
+        "norms": 0,
+        "term_vectors": 0,
+        "knn_vectors": 0
+      }
+    },
+    {
+      "label": "logs-logsdb.syn.zstd.oo-service",
+      "datastream": "logs-logsdb.syn.zstd.oo-service",
+      "source_type": "service",
+      "role": "case",
+      "index_mode": "logsdb",
+      "_source": "syn",
+      "codec": "zstd",
+      "parse_type": "oo",
+      "docs": 32224,
+      "raw_bytes": 10485787,
+      "primary_bytes": 1765267,
+      "total_bytes": 1765267,
+      "compression_ratio": 0.1683,
+      "backing_indices": [
+        ".ds-logs-logsdb.syn.zstd.oo-service-2026.06.09-000001"
+      ],
+      "disk_usage": {
+        "inverted_index": 187878,
+        "stored_fields": 1497634,
+        "doc_values": 67786,
+        "points": 0,
+        "bloom_filter": 0,
+        "norms": 0,
+        "term_vectors": 0,
+        "knn_vectors": 0
+      }
+    },
+    {
+      "label": "logs-logsdb.syn.zstd.po-firewall",
+      "datastream": "logs-logsdb.syn.zstd.po-firewall",
+      "source_type": "firewall",
+      "role": "case",
+      "index_mode": "logsdb",
+      "_source": "syn",
+      "codec": "zstd",
+      "parse_type": "po",
+      "docs": 17944,
+      "raw_bytes": 10486256,
+      "primary_bytes": 3032700,
+      "total_bytes": 3032700,
+      "compression_ratio": 0.2892,
+      "backing_indices": [
+        ".ds-logs-logsdb.syn.zstd.po-firewall-2026.06.09-000001"
+      ],
+      "disk_usage": {
+        "inverted_index": 479807,
+        "stored_fields": 41853,
+        "doc_values": 1281317,
+        "points": 1178568,
+        "bloom_filter": 0,
+        "norms": 0,
+        "term_vectors": 0,
+        "knn_vectors": 0
+      }
+    },
+    {
+      "label": "logs-logsdb.syn.zstd.po-metric",
+      "datastream": "logs-logsdb.syn.zstd.po-metric",
+      "source_type": "metric",
+      "role": "case",
+      "index_mode": "logsdb",
+      "_source": "syn",
+      "codec": "zstd",
+      "parse_type": "po",
+      "docs": 208944,
+      "raw_bytes": 10485777,
+      "primary_bytes": 4326725,
+      "total_bytes": 4326725,
+      "compression_ratio": 0.4126,
+      "backing_indices": [
+        ".ds-logs-logsdb.syn.zstd.po-metric-2026.06.09-000001"
+      ],
+      "disk_usage": {
+        "inverted_index": 1176964,
+        "stored_fields": 443848,
+        "doc_values": 761897,
+        "points": 1920165,
+        "bloom_filter": 0,
+        "norms": 0,
+        "term_vectors": 0,
+        "knn_vectors": 0
+      }
+    },
+    {
+      "label": "logs-logsdb.syn.zstd.po-service",
+      "datastream": "logs-logsdb.syn.zstd.po-service",
+      "source_type": "service",
+      "role": "case",
+      "index_mode": "logsdb",
+      "_source": "syn",
+      "codec": "zstd",
+      "parse_type": "po",
+      "docs": 32224,
+      "raw_bytes": 10485787,
+      "primary_bytes": 2883011,
+      "total_bytes": 2883011,
+      "compression_ratio": 0.2749,
+      "backing_indices": [
+        ".ds-logs-logsdb.syn.zstd.po-service-2026.06.09-000001"
+      ],
+      "disk_usage": {
+        "inverted_index": 1316168,
+        "stored_fields": 67458,
+        "doc_values": 1140533,
+        "points": 314455,
+        "bloom_filter": 0,
+        "norms": 0,
+        "term_vectors": 0,
+        "knn_vectors": 0
+      }
+    },
+    {
+      "label": "logs-standard.str.lz4.oap-firewall",
+      "datastream": "logs-standard.str.lz4.oap-firewall",
+      "source_type": "firewall",
+      "role": "case",
+      "index_mode": "standard",
+      "_source": "str",
+      "codec": "lz4",
+      "parse_type": "oap",
+      "docs": 17944,
+      "raw_bytes": 10486256,
+      "primary_bytes": 10594721,
+      "total_bytes": 10594721,
+      "compression_ratio": 1.0103,
+      "backing_indices": [
+        ".ds-logs-standard.str.lz4.oap-firewall-2026.06.09-000001"
+      ],
+      "disk_usage": {
+        "inverted_index": 450040,
+        "stored_fields": 7551806,
+        "doc_values": 1343631,
+        "points": 1198511,
+        "bloom_filter": 0,
+        "norms": 0,
+        "term_vectors": 0,
+        "knn_vectors": 0
+      }
+    },
+    {
+      "label": "logs-standard.str.lz4.oap-metric",
+      "datastream": "logs-standard.str.lz4.oap-metric",
+      "source_type": "metric",
+      "role": "case",
+      "index_mode": "standard",
+      "_source": "str",
+      "codec": "lz4",
+      "parse_type": "oap",
+      "docs": 208944,
+      "raw_bytes": 10485777,
+      "primary_bytes": 12279020,
+      "total_bytes": 12279020,
+      "compression_ratio": 1.171,
+      "backing_indices": [
+        ".ds-logs-standard.str.lz4.oap-metric-2026.06.09-000001"
+      ],
+      "disk_usage": {
+        "inverted_index": 1156031,
+        "stored_fields": 7268519,
+        "doc_values": 1724620,
+        "points": 2106858,
+        "bloom_filter": 0,
+        "norms": 0,
+        "term_vectors": 0,
+        "knn_vectors": 0
+      }
+    },
+    {
+      "label": "logs-standard.str.lz4.oap-service",
+      "datastream": "logs-standard.str.lz4.oap-service",
+      "source_type": "service",
+      "role": "case",
+      "index_mode": "standard",
+      "_source": "str",
+      "codec": "lz4",
+      "parse_type": "oap",
+      "docs": 32224,
+      "raw_bytes": 10485787,
+      "primary_bytes": 10650146,
+      "total_bytes": 10650146,
+      "compression_ratio": 1.0157,
+      "backing_indices": [
+        ".ds-logs-standard.str.lz4.oap-service-2026.06.09-000001"
+      ],
+      "disk_usage": {
+        "inverted_index": 1285506,
+        "stored_fields": 7349146,
+        "doc_values": 1558138,
+        "points": 381627,
+        "bloom_filter": 0,
+        "norms": 0,
+        "term_vectors": 0,
+        "knn_vectors": 0
+      }
+    },
+    {
+      "label": "logs-standard.str.lz4.oo-firewall",
+      "datastream": "logs-standard.str.lz4.oo-firewall",
+      "source_type": "firewall",
+      "role": "case",
+      "index_mode": "standard",
+      "_source": "str",
+      "codec": "lz4",
+      "parse_type": "oo",
+      "docs": 17944,
+      "raw_bytes": 10486256,
+      "primary_bytes": 3289911,
+      "total_bytes": 3289911,
+      "compression_ratio": 0.3137,
+      "backing_indices": [
+        ".ds-logs-standard.str.lz4.oo-firewall-2026.06.09-000001"
+      ],
+      "disk_usage": {
+        "inverted_index": 103069,
+        "stored_fields": 3104570,
+        "doc_values": 53832,
+        "points": 19949,
+        "bloom_filter": 0,
+        "norms": 0,
+        "term_vectors": 0,
+        "knn_vectors": 0
+      }
+    },
+    {
+      "label": "logs-standard.str.lz4.oo-metric",
+      "datastream": "logs-standard.str.lz4.oo-metric",
+      "source_type": "metric",
+      "role": "case",
+      "index_mode": "standard",
+      "_source": "str",
+      "codec": "lz4",
+      "parse_type": "oo",
+      "docs": 208944,
+      "raw_bytes": 10485777,
+      "primary_bytes": 7357247,
+      "total_bytes": 7357247,
+      "compression_ratio": 0.7016,
+      "backing_indices": [
+        ".ds-logs-standard.str.lz4.oo-metric-2026.06.09-000001"
+      ],
+      "disk_usage": {
+        "inverted_index": 1156031,
+        "stored_fields": 5217506,
+        "doc_values": 731863,
+        "points": 231717,
+        "bloom_filter": 0,
+        "norms": 0,
+        "term_vectors": 0,
+        "knn_vectors": 0
+      }
+    },
+    {
+      "label": "logs-standard.str.lz4.oo-service",
+      "datastream": "logs-standard.str.lz4.oo-service",
+      "source_type": "service",
+      "role": "case",
+      "index_mode": "standard",
+      "_source": "str",
+      "codec": "lz4",
+      "parse_type": "oo",
+      "docs": 32224,
+      "raw_bytes": 10485787,
+      "primary_bytes": 3459925,
+      "total_bytes": 3459925,
+      "compression_ratio": 0.33,
+      "backing_indices": [
+        ".ds-logs-standard.str.lz4.oo-service-2026.06.09-000001"
+      ],
+      "disk_usage": {
+        "inverted_index": 187563,
+        "stored_fields": 3126600,
+        "doc_values": 96672,
+        "points": 35729,
+        "bloom_filter": 0,
+        "norms": 0,
+        "term_vectors": 0,
+        "knn_vectors": 0
+      }
+    },
+    {
+      "label": "logs-standard.str.lz4.po-firewall",
+      "datastream": "logs-standard.str.lz4.po-firewall",
+      "source_type": "firewall",
+      "role": "case",
+      "index_mode": "standard",
+      "_source": "str",
+      "codec": "lz4",
+      "parse_type": "po",
+      "docs": 17944,
+      "raw_bytes": 10486256,
+      "primary_bytes": 7077196,
+      "total_bytes": 7077196,
+      "compression_ratio": 0.6749,
+      "backing_indices": [
+        ".ds-logs-standard.str.lz4.po-firewall-2026.06.09-000001"
+      ],
+      "disk_usage": {
+        "inverted_index": 450040,
+        "stored_fields": 4034279,
+        "doc_values": 1343631,
+        "points": 1198511,
+        "bloom_filter": 0,
+        "norms": 0,
+        "term_vectors": 0,
+        "knn_vectors": 0
+      }
+    },
+    {
+      "label": "logs-standard.str.lz4.po-metric",
+      "datastream": "logs-standard.str.lz4.po-metric",
+      "source_type": "metric",
+      "role": "case",
+      "index_mode": "standard",
+      "_source": "str",
+      "codec": "lz4",
+      "parse_type": "po",
+      "docs": 208944,
+      "raw_bytes": 10485777,
+      "primary_bytes": 9606281,
+      "total_bytes": 9606281,
+      "compression_ratio": 0.9161,
+      "backing_indices": [
+        ".ds-logs-standard.str.lz4.po-metric-2026.06.09-000001"
+      ],
+      "disk_usage": {
+        "inverted_index": 1156031,
+        "stored_fields": 4595776,
+        "doc_values": 1724620,
+        "points": 2106858,
+        "bloom_filter": 0,
+        "norms": 0,
+        "term_vectors": 0,
+        "knn_vectors": 0
+      }
+    },
+    {
+      "label": "logs-standard.str.lz4.po-service",
+      "datastream": "logs-standard.str.lz4.po-service",
+      "source_type": "service",
+      "role": "case",
+      "index_mode": "standard",
+      "_source": "str",
+      "codec": "lz4",
+      "parse_type": "po",
+      "docs": 32224,
+      "raw_bytes": 10485787,
+      "primary_bytes": 7092558,
+      "total_bytes": 7092558,
+      "compression_ratio": 0.6764,
+      "backing_indices": [
+        ".ds-logs-standard.str.lz4.po-service-2026.06.09-000001"
+      ],
+      "disk_usage": {
+        "inverted_index": 1285506,
+        "stored_fields": 3791551,
+        "doc_values": 1558138,
+        "points": 381627,
+        "bloom_filter": 0,
+        "norms": 0,
+        "term_vectors": 0,
+        "knn_vectors": 0
+      }
+    },
+    {
+      "label": "logs-standard.str.zstd.oap-firewall",
+      "datastream": "logs-standard.str.zstd.oap-firewall",
+      "source_type": "firewall",
+      "role": "case",
+      "index_mode": "standard",
+      "_source": "str",
+      "codec": "zstd",
+      "parse_type": "oap",
+      "docs": 17944,
+      "raw_bytes": 10486256,
+      "primary_bytes": 6547464,
+      "total_bytes": 6547464,
+      "compression_ratio": 0.6244,
+      "backing_indices": [
+        ".ds-logs-standard.str.zstd.oap-firewall-2026.06.09-000001"
+      ],
+      "disk_usage": {
+        "inverted_index": 450040,
+        "stored_fields": 3504497,
+        "doc_values": 1343631,
+        "points": 1198511,
+        "bloom_filter": 0,
+        "norms": 0,
+        "term_vectors": 0,
+        "knn_vectors": 0
+      }
+    },
+    {
+      "label": "logs-standard.str.zstd.oap-metric",
+      "datastream": "logs-standard.str.zstd.oap-metric",
+      "source_type": "metric",
+      "role": "case",
+      "index_mode": "standard",
+      "_source": "str",
+      "codec": "zstd",
+      "parse_type": "oap",
+      "docs": 208944,
+      "raw_bytes": 10485777,
+      "primary_bytes": 8601888,
+      "total_bytes": 8601888,
+      "compression_ratio": 0.8203,
+      "backing_indices": [
+        ".ds-logs-standard.str.zstd.oap-metric-2026.06.09-000001"
+      ],
+      "disk_usage": {
+        "inverted_index": 1156031,
+        "stored_fields": 3591362,
+        "doc_values": 1724620,
+        "points": 2106858,
+        "bloom_filter": 0,
+        "norms": 0,
+        "term_vectors": 0,
+        "knn_vectors": 0
+      }
+    },
+    {
+      "label": "logs-standard.str.zstd.oap-service",
+      "datastream": "logs-standard.str.zstd.oap-service",
+      "source_type": "service",
+      "role": "case",
+      "index_mode": "standard",
+      "_source": "str",
+      "codec": "zstd",
+      "parse_type": "oap",
+      "docs": 32224,
+      "raw_bytes": 10485787,
+      "primary_bytes": 6555357,
+      "total_bytes": 6555357,
+      "compression_ratio": 0.6252,
+      "backing_indices": [
+        ".ds-logs-standard.str.zstd.oap-service-2026.06.09-000001"
+      ],
+      "disk_usage": {
+        "inverted_index": 1285506,
+        "stored_fields": 3254351,
+        "doc_values": 1558138,
+        "points": 381627,
+        "bloom_filter": 0,
+        "norms": 0,
+        "term_vectors": 0,
+        "knn_vectors": 0
+      }
+    },
+    {
+      "label": "logs-standard.str.zstd.oo-firewall",
+      "datastream": "logs-standard.str.zstd.oo-firewall",
+      "source_type": "firewall",
+      "role": "case",
+      "index_mode": "standard",
+      "_source": "str",
+      "codec": "zstd",
+      "parse_type": "oo",
+      "docs": 17944,
+      "raw_bytes": 10486256,
+      "primary_bytes": 1948699,
+      "total_bytes": 1948699,
+      "compression_ratio": 0.1858,
+      "backing_indices": [
+        ".ds-logs-standard.str.zstd.oo-firewall-2026.06.09-000001"
+      ],
+      "disk_usage": {
+        "inverted_index": 103069,
+        "stored_fields": 1763351,
+        "doc_values": 53832,
+        "points": 19949,
+        "bloom_filter": 0,
+        "norms": 0,
+        "term_vectors": 0,
+        "knn_vectors": 0
+      }
+    },
+    {
+      "label": "logs-standard.str.zstd.oo-metric",
+      "datastream": "logs-standard.str.zstd.oo-metric",
+      "source_type": "metric",
+      "role": "case",
+      "index_mode": "standard",
+      "_source": "str",
+      "codec": "zstd",
+      "parse_type": "oo",
+      "docs": 208944,
+      "raw_bytes": 10485777,
+      "primary_bytes": 5537783,
+      "total_bytes": 5537783,
+      "compression_ratio": 0.5281,
+      "backing_indices": [
+        ".ds-logs-standard.str.zstd.oo-metric-2026.06.09-000001"
+      ],
+      "disk_usage": {
+        "inverted_index": 1156031,
+        "stored_fields": 3398052,
+        "doc_values": 731863,
+        "points": 231717,
+        "bloom_filter": 0,
+        "norms": 0,
+        "term_vectors": 0,
+        "knn_vectors": 0
+      }
+    },
+    {
+      "label": "logs-standard.str.zstd.oo-service",
+      "datastream": "logs-standard.str.zstd.oo-service",
+      "source_type": "service",
+      "role": "case",
+      "index_mode": "standard",
+      "_source": "str",
+      "codec": "zstd",
+      "parse_type": "oo",
+      "docs": 32224,
+      "raw_bytes": 10485787,
+      "primary_bytes": 1968082,
+      "total_bytes": 1968082,
+      "compression_ratio": 0.1877,
+      "backing_indices": [
+        ".ds-logs-standard.str.zstd.oo-service-2026.06.09-000001"
+      ],
+      "disk_usage": {
+        "inverted_index": 187563,
+        "stored_fields": 1634754,
+        "doc_values": 96672,
+        "points": 35729,
+        "bloom_filter": 0,
+        "norms": 0,
+        "term_vectors": 0,
+        "knn_vectors": 0
+      }
+    },
+    {
+      "label": "logs-standard.str.zstd.po-firewall",
+      "datastream": "logs-standard.str.zstd.po-firewall",
+      "source_type": "firewall",
+      "role": "case",
+      "index_mode": "standard",
+      "_source": "str",
+      "codec": "zstd",
+      "parse_type": "po",
+      "docs": 17944,
+      "raw_bytes": 10486256,
+      "primary_bytes": 5164729,
+      "total_bytes": 5164729,
+      "compression_ratio": 0.4925,
+      "backing_indices": [
+        ".ds-logs-standard.str.zstd.po-firewall-2026.06.09-000001"
+      ],
+      "disk_usage": {
+        "inverted_index": 450040,
+        "stored_fields": 2121761,
+        "doc_values": 1343631,
+        "points": 1198511,
+        "bloom_filter": 0,
+        "norms": 0,
+        "term_vectors": 0,
+        "knn_vectors": 0
+      }
+    },
+    {
+      "label": "logs-standard.str.zstd.po-metric",
+      "datastream": "logs-standard.str.zstd.po-metric",
+      "source_type": "metric",
+      "role": "case",
+      "index_mode": "standard",
+      "_source": "str",
+      "codec": "zstd",
+      "parse_type": "po",
+      "docs": 208944,
+      "raw_bytes": 10485777,
+      "primary_bytes": 7544961,
+      "total_bytes": 7544961,
+      "compression_ratio": 0.7195,
+      "backing_indices": [
+        ".ds-logs-standard.str.zstd.po-metric-2026.06.09-000001"
+      ],
+      "disk_usage": {
+        "inverted_index": 1156031,
+        "stored_fields": 2534435,
+        "doc_values": 1724620,
+        "points": 2106858,
+        "bloom_filter": 0,
+        "norms": 0,
+        "term_vectors": 0,
+        "knn_vectors": 0
+      }
+    },
+    {
+      "label": "logs-standard.str.zstd.po-service",
+      "datastream": "logs-standard.str.zstd.po-service",
+      "source_type": "service",
+      "role": "case",
+      "index_mode": "standard",
+      "_source": "str",
+      "codec": "zstd",
+      "parse_type": "po",
+      "docs": 32224,
+      "raw_bytes": 10485787,
+      "primary_bytes": 5220498,
+      "total_bytes": 5220498,
+      "compression_ratio": 0.4979,
+      "backing_indices": [
+        ".ds-logs-standard.str.zstd.po-service-2026.06.09-000001"
+      ],
+      "disk_usage": {
+        "inverted_index": 1285506,
+        "stored_fields": 1919534,
+        "doc_values": 1558138,
+        "points": 381627,
+        "bloom_filter": 0,
+        "norms": 0,
+        "term_vectors": 0,
+        "knn_vectors": 0
+      }
+    },
+    {
+      "label": "logs-standard.syn.lz4.oap-firewall",
+      "datastream": "logs-standard.syn.lz4.oap-firewall",
+      "source_type": "firewall",
+      "role": "case",
+      "index_mode": "standard",
+      "_source": "syn",
+      "codec": "lz4",
+      "parse_type": "oap",
+      "docs": 17944,
+      "raw_bytes": 10486256,
+      "primary_bytes": 6023018,
+      "total_bytes": 6023018,
+      "compression_ratio": 0.5744,
+      "backing_indices": [
+        ".ds-logs-standard.syn.lz4.oap-firewall-2026.06.09-000001"
+      ],
+      "disk_usage": {
+        "inverted_index": 450040,
+        "stored_fields": 2961950,
+        "doc_values": 1361575,
+        "points": 1198511,
+        "bloom_filter": 0,
+        "norms": 0,
+        "term_vectors": 0,
+        "knn_vectors": 0
+      }
+    },
+    {
+      "label": "logs-standard.syn.lz4.oap-metric",
+      "datastream": "logs-standard.syn.lz4.oap-metric",
+      "source_type": "metric",
+      "role": "case",
+      "index_mode": "standard",
+      "_source": "syn",
+      "codec": "lz4",
+      "parse_type": "oap",
+      "docs": 208944,
+      "raw_bytes": 10485777,
+      "primary_bytes": 8494463,
+      "total_bytes": 8494463,
+      "compression_ratio": 0.8101,
+      "backing_indices": [
+        ".ds-logs-standard.syn.lz4.oap-metric-2026.06.09-000001"
+      ],
+      "disk_usage": {
+        "inverted_index": 1156031,
+        "stored_fields": 3453222,
+        "doc_values": 1755107,
+        "points": 2106858,
+        "bloom_filter": 0,
+        "norms": 0,
+        "term_vectors": 0,
+        "knn_vectors": 0
+      }
+    },
+    {
+      "label": "logs-standard.syn.lz4.oap-service",
+      "datastream": "logs-standard.syn.lz4.oap-service",
+      "source_type": "service",
+      "role": "case",
+      "index_mode": "standard",
+      "_source": "syn",
+      "codec": "lz4",
+      "parse_type": "oap",
+      "docs": 32224,
+      "raw_bytes": 10485787,
+      "primary_bytes": 6177744,
+      "total_bytes": 6177744,
+      "compression_ratio": 0.5892,
+      "backing_indices": [
+        ".ds-logs-standard.syn.lz4.oap-service-2026.06.09-000001"
+      ],
+      "disk_usage": {
+        "inverted_index": 1285506,
+        "stored_fields": 2843112,
+        "doc_values": 1590362,
+        "points": 381627,
+        "bloom_filter": 0,
+        "norms": 0,
+        "term_vectors": 0,
+        "knn_vectors": 0
+      }
+    },
+    {
+      "label": "logs-standard.syn.lz4.oo-firewall",
+      "datastream": "logs-standard.syn.lz4.oo-firewall",
+      "source_type": "firewall",
+      "role": "case",
+      "index_mode": "standard",
+      "_source": "syn",
+      "codec": "lz4",
+      "parse_type": "oo",
+      "docs": 17944,
+      "raw_bytes": 10486256,
+      "primary_bytes": 3162778,
+      "total_bytes": 3162778,
+      "compression_ratio": 0.3016,
+      "backing_indices": [
+        ".ds-logs-standard.syn.lz4.oo-firewall-2026.06.09-000001"
+      ],
+      "disk_usage": {
+        "inverted_index": 103069,
+        "stored_fields": 2959292,
+        "doc_values": 71776,
+        "points": 19949,
+        "bloom_filter": 0,
+        "norms": 0,
+        "term_vectors": 0,
+        "knn_vectors": 0
+      }
+    },
+    {
+      "label": "logs-standard.syn.lz4.oo-metric",
+      "datastream": "logs-standard.syn.lz4.oo-metric",
+      "source_type": "metric",
+      "role": "case",
+      "index_mode": "standard",
+      "_source": "syn",
+      "codec": "lz4",
+      "parse_type": "oo",
+      "docs": 208944,
+      "raw_bytes": 10485777,
+      "primary_bytes": 5697607,
+      "total_bytes": 5697607,
+      "compression_ratio": 0.5434,
+      "backing_indices": [
+        ".ds-logs-standard.syn.lz4.oo-metric-2026.06.09-000001"
+      ],
+      "disk_usage": {
+        "inverted_index": 1156031,
+        "stored_fields": 3453166,
+        "doc_values": 836335,
+        "points": 231717,
+        "bloom_filter": 0,
+        "norms": 0,
+        "term_vectors": 0,
+        "knn_vectors": 0
+      }
+    },
+    {
+      "label": "logs-standard.syn.lz4.oo-service",
+      "datastream": "logs-standard.syn.lz4.oo-service",
+      "source_type": "service",
+      "role": "case",
+      "index_mode": "standard",
+      "_source": "syn",
+      "codec": "lz4",
+      "parse_type": "oo",
+      "docs": 32224,
+      "raw_bytes": 10485787,
+      "primary_bytes": 3204083,
+      "total_bytes": 3204083,
+      "compression_ratio": 0.3056,
+      "backing_indices": [
+        ".ds-logs-standard.syn.lz4.oo-service-2026.06.09-000001"
+      ],
+      "disk_usage": {
+        "inverted_index": 187563,
+        "stored_fields": 2838253,
+        "doc_values": 128896,
+        "points": 35729,
+        "bloom_filter": 0,
+        "norms": 0,
+        "term_vectors": 0,
+        "knn_vectors": 0
+      }
+    },
+    {
+      "label": "logs-standard.syn.lz4.po-firewall",
+      "datastream": "logs-standard.syn.lz4.po-firewall",
+      "source_type": "firewall",
+      "role": "case",
+      "index_mode": "standard",
+      "_source": "syn",
+      "codec": "lz4",
+      "parse_type": "po",
+      "docs": 17944,
+      "raw_bytes": 10486256,
+      "primary_bytes": 3159755,
+      "total_bytes": 3159755,
+      "compression_ratio": 0.3013,
+      "backing_indices": [
+        ".ds-logs-standard.syn.lz4.po-firewall-2026.06.09-000001"
+      ],
+      "disk_usage": {
+        "inverted_index": 450040,
+        "stored_fields": 98722,
+        "doc_values": 1361575,
+        "points": 1198511,
+        "bloom_filter": 0,
+        "norms": 0,
+        "term_vectors": 0,
+        "knn_vectors": 0
+      }
+    },
+    {
+      "label": "logs-standard.syn.lz4.po-metric",
+      "datastream": "logs-standard.syn.lz4.po-metric",
+      "source_type": "metric",
+      "role": "case",
+      "index_mode": "standard",
+      "_source": "syn",
+      "codec": "lz4",
+      "parse_type": "po",
+      "docs": 208944,
+      "raw_bytes": 10485777,
+      "primary_bytes": 6189495,
+      "total_bytes": 6189495,
+      "compression_ratio": 0.5903,
+      "backing_indices": [
+        ".ds-logs-standard.syn.lz4.po-metric-2026.06.09-000001"
+      ],
+      "disk_usage": {
+        "inverted_index": 1156031,
+        "stored_fields": 1148321,
+        "doc_values": 1755107,
+        "points": 2106858,
+        "bloom_filter": 0,
+        "norms": 0,
+        "term_vectors": 0,
+        "knn_vectors": 0
+      }
+    },
+    {
+      "label": "logs-standard.syn.lz4.po-service",
+      "datastream": "logs-standard.syn.lz4.po-service",
+      "source_type": "service",
+      "role": "case",
+      "index_mode": "standard",
+      "_source": "syn",
+      "codec": "lz4",
+      "parse_type": "po",
+      "docs": 32224,
+      "raw_bytes": 10485787,
+      "primary_bytes": 3510490,
+      "total_bytes": 3510490,
+      "compression_ratio": 0.3348,
+      "backing_indices": [
+        ".ds-logs-standard.syn.lz4.po-service-2026.06.09-000001"
+      ],
+      "disk_usage": {
+        "inverted_index": 1285506,
+        "stored_fields": 177102,
+        "doc_values": 1590362,
+        "points": 381627,
+        "bloom_filter": 0,
+        "norms": 0,
+        "term_vectors": 0,
+        "knn_vectors": 0
+      }
+    },
+    {
+      "label": "logs-standard.syn.zstd.oap-firewall",
+      "datastream": "logs-standard.syn.zstd.oap-firewall",
+      "source_type": "firewall",
+      "role": "case",
+      "index_mode": "standard",
+      "_source": "syn",
+      "codec": "zstd",
+      "parse_type": "oap",
+      "docs": 17944,
+      "raw_bytes": 10486256,
+      "primary_bytes": 4758428,
+      "total_bytes": 4758428,
+      "compression_ratio": 0.4538,
+      "backing_indices": [
+        ".ds-logs-standard.syn.zstd.oap-firewall-2026.06.09-000001"
+      ],
+      "disk_usage": {
+        "inverted_index": 450040,
+        "stored_fields": 1697356,
+        "doc_values": 1361575,
+        "points": 1198511,
+        "bloom_filter": 0,
+        "norms": 0,
+        "term_vectors": 0,
+        "knn_vectors": 0
+      }
+    },
+    {
+      "label": "logs-standard.syn.zstd.oap-metric",
+      "datastream": "logs-standard.syn.zstd.oap-metric",
+      "source_type": "metric",
+      "role": "case",
+      "index_mode": "standard",
+      "_source": "syn",
+      "codec": "zstd",
+      "parse_type": "oap",
+      "docs": 208944,
+      "raw_bytes": 10485777,
+      "primary_bytes": 7077948,
+      "total_bytes": 7077948,
+      "compression_ratio": 0.675,
+      "backing_indices": [
+        ".ds-logs-standard.syn.zstd.oap-metric-2026.06.09-000001"
+      ],
+      "disk_usage": {
+        "inverted_index": 1156031,
+        "stored_fields": 2036746,
+        "doc_values": 1755107,
+        "points": 2106858,
+        "bloom_filter": 0,
+        "norms": 0,
+        "term_vectors": 0,
+        "knn_vectors": 0
+      }
+    },
+    {
+      "label": "logs-standard.syn.zstd.oap-service",
+      "datastream": "logs-standard.syn.zstd.oap-service",
+      "source_type": "service",
+      "role": "case",
+      "index_mode": "standard",
+      "_source": "syn",
+      "codec": "zstd",
+      "parse_type": "oap",
+      "docs": 32224,
+      "raw_bytes": 10485787,
+      "primary_bytes": 4826527,
+      "total_bytes": 4826527,
+      "compression_ratio": 0.4603,
+      "backing_indices": [
+        ".ds-logs-standard.syn.zstd.oap-service-2026.06.09-000001"
+      ],
+      "disk_usage": {
+        "inverted_index": 1285506,
+        "stored_fields": 1491834,
+        "doc_values": 1590362,
+        "points": 381627,
+        "bloom_filter": 0,
+        "norms": 0,
+        "term_vectors": 0,
+        "knn_vectors": 0
+      }
+    },
+    {
+      "label": "logs-standard.syn.zstd.oo-firewall",
+      "datastream": "logs-standard.syn.zstd.oo-firewall",
+      "source_type": "firewall",
+      "role": "case",
+      "index_mode": "standard",
+      "_source": "syn",
+      "codec": "zstd",
+      "parse_type": "oo",
+      "docs": 17944,
+      "raw_bytes": 10486256,
+      "primary_bytes": 1899443,
+      "total_bytes": 1899443,
+      "compression_ratio": 0.1811,
+      "backing_indices": [
+        ".ds-logs-standard.syn.zstd.oo-firewall-2026.06.09-000001"
+      ],
+      "disk_usage": {
+        "inverted_index": 103069,
+        "stored_fields": 1695944,
+        "doc_values": 71776,
+        "points": 19949,
+        "bloom_filter": 0,
+        "norms": 0,
+        "term_vectors": 0,
+        "knn_vectors": 0
+      }
+    },
+    {
+      "label": "logs-standard.syn.zstd.oo-metric",
+      "datastream": "logs-standard.syn.zstd.oo-metric",
+      "source_type": "metric",
+      "role": "case",
+      "index_mode": "standard",
+      "_source": "syn",
+      "codec": "zstd",
+      "parse_type": "oo",
+      "docs": 208944,
+      "raw_bytes": 10485777,
+      "primary_bytes": 4281196,
+      "total_bytes": 4281196,
+      "compression_ratio": 0.4083,
+      "backing_indices": [
+        ".ds-logs-standard.syn.zstd.oo-metric-2026.06.09-000001"
+      ],
+      "disk_usage": {
+        "inverted_index": 1156031,
+        "stored_fields": 2036769,
+        "doc_values": 836335,
+        "points": 231717,
+        "bloom_filter": 0,
+        "norms": 0,
+        "term_vectors": 0,
+        "knn_vectors": 0
+      }
+    },
+    {
+      "label": "logs-standard.syn.zstd.oo-service",
+      "datastream": "logs-standard.syn.zstd.oo-service",
+      "source_type": "service",
+      "role": "case",
+      "index_mode": "standard",
+      "_source": "syn",
+      "codec": "zstd",
+      "parse_type": "oo",
+      "docs": 32224,
+      "raw_bytes": 10485787,
+      "primary_bytes": 1854849,
+      "total_bytes": 1854849,
+      "compression_ratio": 0.1769,
+      "backing_indices": [
+        ".ds-logs-standard.syn.zstd.oo-service-2026.06.09-000001"
+      ],
+      "disk_usage": {
+        "inverted_index": 187563,
+        "stored_fields": 1489017,
+        "doc_values": 128896,
+        "points": 35729,
+        "bloom_filter": 0,
+        "norms": 0,
+        "term_vectors": 0,
+        "knn_vectors": 0
+      }
+    },
+    {
+      "label": "logs-standard.syn.zstd.po-firewall",
+      "datastream": "logs-standard.syn.zstd.po-firewall",
+      "source_type": "firewall",
+      "role": "case",
+      "index_mode": "standard",
+      "_source": "syn",
+      "codec": "zstd",
+      "parse_type": "po",
+      "docs": 17944,
+      "raw_bytes": 10486256,
+      "primary_bytes": 3099344,
+      "total_bytes": 3099344,
+      "compression_ratio": 0.2956,
+      "backing_indices": [
+        ".ds-logs-standard.syn.zstd.po-firewall-2026.06.09-000001"
+      ],
+      "disk_usage": {
+        "inverted_index": 450040,
+        "stored_fields": 38256,
+        "doc_values": 1361575,
+        "points": 1198511,
+        "bloom_filter": 0,
+        "norms": 0,
+        "term_vectors": 0,
+        "knn_vectors": 0
+      }
+    },
+    {
+      "label": "logs-standard.syn.zstd.po-metric",
+      "datastream": "logs-standard.syn.zstd.po-metric",
+      "source_type": "metric",
+      "role": "case",
+      "index_mode": "standard",
+      "_source": "syn",
+      "codec": "zstd",
+      "parse_type": "po",
+      "docs": 208944,
+      "raw_bytes": 10485777,
+      "primary_bytes": 5485244,
+      "total_bytes": 5485244,
+      "compression_ratio": 0.5231,
+      "backing_indices": [
+        ".ds-logs-standard.syn.zstd.po-metric-2026.06.09-000001"
+      ],
+      "disk_usage": {
+        "inverted_index": 1156031,
+        "stored_fields": 444120,
+        "doc_values": 1755107,
+        "points": 2106858,
+        "bloom_filter": 0,
+        "norms": 0,
+        "term_vectors": 0,
+        "knn_vectors": 0
+      }
+    },
+    {
+      "label": "logs-standard.syn.zstd.po-service",
+      "datastream": "logs-standard.syn.zstd.po-service",
+      "source_type": "service",
+      "role": "case",
+      "index_mode": "standard",
+      "_source": "syn",
+      "codec": "zstd",
+      "parse_type": "po",
+      "docs": 32224,
+      "raw_bytes": 10485787,
+      "primary_bytes": 3403999,
+      "total_bytes": 3403999,
+      "compression_ratio": 0.3246,
+      "backing_indices": [
+        ".ds-logs-standard.syn.zstd.po-service-2026.06.09-000001"
+      ],
+      "disk_usage": {
+        "inverted_index": 1285506,
+        "stored_fields": 70605,
+        "doc_values": 1590362,
+        "points": 381627,
+        "bloom_filter": 0,
+        "norms": 0,
+        "term_vectors": 0,
+        "knn_vectors": 0
+      }
+    },
+    {
+      "label": "logs-tsds_def.str.lz4.oap-firewall",
+      "datastream": "logs-tsds_def.str.lz4.oap-firewall",
+      "source_type": "firewall",
+      "role": "case",
+      "index_mode": "tsds_def",
+      "_source": "str",
+      "codec": "lz4",
+      "parse_type": "oap",
+      "docs": 17944,
+      "raw_bytes": 10486256,
+      "primary_bytes": 10125498,
+      "total_bytes": 10125498,
+      "compression_ratio": 0.9656,
+      "backing_indices": [
+        ".ds-logs-tsds_def.str.lz4.oap-firewall-2026.06.09-000001"
+      ],
+      "disk_usage": {
+        "inverted_index": 16853,
+        "stored_fields": 7821096,
+        "doc_values": 1735838,
+        "points": 0,
+        "bloom_filter": 524288,
+        "norms": 0,
+        "term_vectors": 0,
+        "knn_vectors": 0
+      }
+    },
+    {
+      "label": "logs-tsds_def.str.lz4.oap-metric",
+      "datastream": "logs-tsds_def.str.lz4.oap-metric",
+      "source_type": "metric",
+      "role": "case",
+      "index_mode": "tsds_def",
+      "_source": "str",
+      "codec": "lz4",
+      "parse_type": "oap",
+      "docs": 208944,
+      "raw_bytes": 10485777,
+      "primary_bytes": 15521260,
+      "total_bytes": 15521260,
+      "compression_ratio": 1.4802,
+      "backing_indices": [
+        ".ds-logs-tsds_def.str.lz4.oap-metric-2026.06.09-000001"
+      ],
+      "disk_usage": {
+        "inverted_index": 0,
+        "stored_fields": 8300495,
+        "doc_values": 3016549,
+        "points": 0,
+        "bloom_filter": 4194304,
+        "norms": 0,
+        "term_vectors": 0,
+        "knn_vectors": 0
+      }
+    },
+    {
+      "label": "logs-tsds_def.str.lz4.oap-service",
+      "datastream": "logs-tsds_def.str.lz4.oap-service",
+      "source_type": "service",
+      "role": "case",
+      "index_mode": "tsds_def",
+      "_source": "str",
+      "codec": "lz4",
+      "parse_type": "oap",
+      "docs": 32224,
+      "raw_bytes": 10485787,
+      "primary_bytes": 10735143,
+      "total_bytes": 10735143,
+      "compression_ratio": 1.0238,
+      "backing_indices": [
+        ".ds-logs-tsds_def.str.lz4.oap-service-2026.06.09-000001"
+      ],
+      "disk_usage": {
+        "inverted_index": 428634,
+        "stored_fields": 7844836,
+        "doc_values": 1916085,
+        "points": 0,
+        "bloom_filter": 524288,
+        "norms": 0,
+        "term_vectors": 0,
+        "knn_vectors": 0
+      }
+    },
+    {
+      "label": "logs-tsds_def.str.lz4.po-firewall",
+      "datastream": "logs-tsds_def.str.lz4.po-firewall",
+      "source_type": "firewall",
+      "role": "case",
+      "index_mode": "tsds_def",
+      "_source": "str",
+      "codec": "lz4",
+      "parse_type": "po",
+      "docs": 17944,
+      "raw_bytes": 10486256,
+      "primary_bytes": 6327560,
+      "total_bytes": 6327560,
+      "compression_ratio": 0.6034,
+      "backing_indices": [
+        ".ds-logs-tsds_def.str.lz4.po-firewall-2026.06.09-000001"
+      ],
+      "disk_usage": {
+        "inverted_index": 16853,
+        "stored_fields": 4023146,
+        "doc_values": 1735838,
+        "points": 0,
+        "bloom_filter": 524288,
+        "norms": 0,
+        "term_vectors": 0,
+        "knn_vectors": 0
+      }
+    },
+    {
+      "label": "logs-tsds_def.str.lz4.po-metric",
+      "datastream": "logs-tsds_def.str.lz4.po-metric",
+      "source_type": "metric",
+      "role": "case",
+      "index_mode": "tsds_def",
+      "_source": "str",
+      "codec": "lz4",
+      "parse_type": "po",
+      "docs": 208944,
+      "raw_bytes": 10485777,
+      "primary_bytes": 12709372,
+      "total_bytes": 12709372,
+      "compression_ratio": 1.2121,
+      "backing_indices": [
+        ".ds-logs-tsds_def.str.lz4.po-metric-2026.06.09-000001"
+      ],
+      "disk_usage": {
+        "inverted_index": 0,
+        "stored_fields": 5488636,
+        "doc_values": 3016549,
+        "points": 0,
+        "bloom_filter": 4194304,
+        "norms": 0,
+        "term_vectors": 0,
+        "knn_vectors": 0
+      }
+    },
+    {
+      "label": "logs-tsds_def.str.lz4.po-service",
+      "datastream": "logs-tsds_def.str.lz4.po-service",
+      "source_type": "service",
+      "role": "case",
+      "index_mode": "tsds_def",
+      "_source": "str",
+      "codec": "lz4",
+      "parse_type": "po",
+      "docs": 32224,
+      "raw_bytes": 10485787,
+      "primary_bytes": 6882902,
+      "total_bytes": 6882902,
+      "compression_ratio": 0.6564,
+      "backing_indices": [
+        ".ds-logs-tsds_def.str.lz4.po-service-2026.06.09-000001"
+      ],
+      "disk_usage": {
+        "inverted_index": 428634,
+        "stored_fields": 3992644,
+        "doc_values": 1916085,
+        "points": 0,
+        "bloom_filter": 524288,
+        "norms": 0,
+        "term_vectors": 0,
+        "knn_vectors": 0
+      }
+    },
+    {
+      "label": "logs-tsds_def.str.zstd.oap-firewall",
+      "datastream": "logs-tsds_def.str.zstd.oap-firewall",
+      "source_type": "firewall",
+      "role": "case",
+      "index_mode": "tsds_def",
+      "_source": "str",
+      "codec": "zstd",
+      "parse_type": "oap",
+      "docs": 17944,
+      "raw_bytes": 10486256,
+      "primary_bytes": 5988013,
+      "total_bytes": 5988013,
+      "compression_ratio": 0.571,
+      "backing_indices": [
+        ".ds-logs-tsds_def.str.zstd.oap-firewall-2026.06.09-000001"
+      ],
+      "disk_usage": {
+        "inverted_index": 16853,
+        "stored_fields": 3683557,
+        "doc_values": 1735838,
+        "points": 0,
+        "bloom_filter": 524288,
+        "norms": 0,
+        "term_vectors": 0,
+        "knn_vectors": 0
+      }
+    },
+    {
+      "label": "logs-tsds_def.str.zstd.oap-metric",
+      "datastream": "logs-tsds_def.str.zstd.oap-metric",
+      "source_type": "metric",
+      "role": "case",
+      "index_mode": "tsds_def",
+      "_source": "str",
+      "codec": "zstd",
+      "parse_type": "oap",
+      "docs": 208944,
+      "raw_bytes": 10485777,
+      "primary_bytes": 11436544,
+      "total_bytes": 11436544,
+      "compression_ratio": 1.0907,
+      "backing_indices": [
+        ".ds-logs-tsds_def.str.zstd.oap-metric-2026.06.09-000001"
+      ],
+      "disk_usage": {
+        "inverted_index": 0,
+        "stored_fields": 4215807,
+        "doc_values": 3016549,
+        "points": 0,
+        "bloom_filter": 4194304,
+        "norms": 0,
+        "term_vectors": 0,
+        "knn_vectors": 0
+      }
+    },
+    {
+      "label": "logs-tsds_def.str.zstd.oap-service",
+      "datastream": "logs-tsds_def.str.zstd.oap-service",
+      "source_type": "service",
+      "role": "case",
+      "index_mode": "tsds_def",
+      "_source": "str",
+      "codec": "zstd",
+      "parse_type": "oap",
+      "docs": 32224,
+      "raw_bytes": 10485787,
+      "primary_bytes": 6468522,
+      "total_bytes": 6468522,
+      "compression_ratio": 0.6169,
+      "backing_indices": [
+        ".ds-logs-tsds_def.str.zstd.oap-service-2026.06.09-000001"
+      ],
+      "disk_usage": {
+        "inverted_index": 428634,
+        "stored_fields": 3578216,
+        "doc_values": 1916085,
+        "points": 0,
+        "bloom_filter": 524288,
+        "norms": 0,
+        "term_vectors": 0,
+        "knn_vectors": 0
+      }
+    },
+    {
+      "label": "logs-tsds_def.str.zstd.po-firewall",
+      "datastream": "logs-tsds_def.str.zstd.po-firewall",
+      "source_type": "firewall",
+      "role": "case",
+      "index_mode": "tsds_def",
+      "_source": "str",
+      "codec": "zstd",
+      "parse_type": "po",
+      "docs": 17944,
+      "raw_bytes": 10486256,
+      "primary_bytes": 4420840,
+      "total_bytes": 4420840,
+      "compression_ratio": 0.4216,
+      "backing_indices": [
+        ".ds-logs-tsds_def.str.zstd.po-firewall-2026.06.09-000001"
+      ],
+      "disk_usage": {
+        "inverted_index": 16853,
+        "stored_fields": 2116444,
+        "doc_values": 1735838,
+        "points": 0,
+        "bloom_filter": 524288,
+        "norms": 0,
+        "term_vectors": 0,
+        "knn_vectors": 0
+      }
+    },
+    {
+      "label": "logs-tsds_def.str.zstd.po-metric",
+      "datastream": "logs-tsds_def.str.zstd.po-metric",
+      "source_type": "metric",
+      "role": "case",
+      "index_mode": "tsds_def",
+      "_source": "str",
+      "codec": "zstd",
+      "parse_type": "po",
+      "docs": 208944,
+      "raw_bytes": 10485777,
+      "primary_bytes": 10074656,
+      "total_bytes": 10074656,
+      "compression_ratio": 0.9608,
+      "backing_indices": [
+        ".ds-logs-tsds_def.str.zstd.po-metric-2026.06.09-000001"
+      ],
+      "disk_usage": {
+        "inverted_index": 0,
+        "stored_fields": 2853923,
+        "doc_values": 3016549,
+        "points": 0,
+        "bloom_filter": 4194304,
+        "norms": 0,
+        "term_vectors": 0,
+        "knn_vectors": 0
+      }
+    },
+    {
+      "label": "logs-tsds_def.str.zstd.po-service",
+      "datastream": "logs-tsds_def.str.zstd.po-service",
+      "source_type": "service",
+      "role": "case",
+      "index_mode": "tsds_def",
+      "_source": "str",
+      "codec": "zstd",
+      "parse_type": "po",
+      "docs": 32224,
+      "raw_bytes": 10485787,
+      "primary_bytes": 4935382,
+      "total_bytes": 4935382,
+      "compression_ratio": 0.4707,
+      "backing_indices": [
+        ".ds-logs-tsds_def.str.zstd.po-service-2026.06.09-000001"
+      ],
+      "disk_usage": {
+        "inverted_index": 428634,
+        "stored_fields": 2045069,
+        "doc_values": 1916085,
+        "points": 0,
+        "bloom_filter": 524288,
+        "norms": 0,
+        "term_vectors": 0,
+        "knn_vectors": 0
+      }
+    },
+    {
+      "label": "logs-tsds_def.syn.lz4.oap-firewall",
+      "datastream": "logs-tsds_def.syn.lz4.oap-firewall",
+      "source_type": "firewall",
+      "role": "case",
+      "index_mode": "tsds_def",
+      "_source": "syn",
+      "codec": "lz4",
+      "parse_type": "oap",
+      "docs": 17944,
+      "raw_bytes": 10486256,
+      "primary_bytes": 5496809,
+      "total_bytes": 5496809,
+      "compression_ratio": 0.5242,
+      "backing_indices": [
+        ".ds-logs-tsds_def.syn.lz4.oap-firewall-2026.06.09-000001"
+      ],
+      "disk_usage": {
+        "inverted_index": 16853,
+        "stored_fields": 3174184,
+        "doc_values": 1753782,
+        "points": 0,
+        "bloom_filter": 524288,
+        "norms": 0,
+        "term_vectors": 0,
+        "knn_vectors": 0
+      }
+    },
+    {
+      "label": "logs-tsds_def.syn.lz4.oap-metric",
+      "datastream": "logs-tsds_def.syn.lz4.oap-metric",
+      "source_type": "metric",
+      "role": "case",
+      "index_mode": "tsds_def",
+      "_source": "syn",
+      "codec": "lz4",
+      "parse_type": "oap",
+      "docs": 208944,
+      "raw_bytes": 10485777,
+      "primary_bytes": 11392603,
+      "total_bytes": 11392603,
+      "compression_ratio": 1.0865,
+      "backing_indices": [
+        ".ds-logs-tsds_def.syn.lz4.oap-metric-2026.06.09-000001"
+      ],
+      "disk_usage": {
+        "inverted_index": 0,
+        "stored_fields": 4119318,
+        "doc_values": 3068785,
+        "points": 0,
+        "bloom_filter": 4194304,
+        "norms": 0,
+        "term_vectors": 0,
+        "knn_vectors": 0
+      }
+    },
+    {
+      "label": "logs-tsds_def.syn.lz4.oap-service",
+      "datastream": "logs-tsds_def.syn.lz4.oap-service",
+      "source_type": "service",
+      "role": "case",
+      "index_mode": "tsds_def",
+      "_source": "syn",
+      "codec": "lz4",
+      "parse_type": "oap",
+      "docs": 32224,
+      "raw_bytes": 10485787,
+      "primary_bytes": 6009333,
+      "total_bytes": 6009333,
+      "compression_ratio": 0.5731,
+      "backing_indices": [
+        ".ds-logs-tsds_def.syn.lz4.oap-service-2026.06.09-000001"
+      ],
+      "disk_usage": {
+        "inverted_index": 428634,
+        "stored_fields": 3085386,
+        "doc_values": 1948309,
+        "points": 0,
+        "bloom_filter": 524288,
+        "norms": 0,
+        "term_vectors": 0,
+        "knn_vectors": 0
+      }
+    },
+    {
+      "label": "logs-tsds_def.syn.lz4.po-firewall",
+      "datastream": "logs-tsds_def.syn.lz4.po-firewall",
+      "source_type": "firewall",
+      "role": "case",
+      "index_mode": "tsds_def",
+      "_source": "syn",
+      "codec": "lz4",
+      "parse_type": "po",
+      "docs": 17944,
+      "raw_bytes": 10486256,
+      "primary_bytes": 2322805,
+      "total_bytes": 2322805,
+      "compression_ratio": 0.2215,
+      "backing_indices": [
+        ".ds-logs-tsds_def.syn.lz4.po-firewall-2026.06.09-000001"
+      ],
+      "disk_usage": {
+        "inverted_index": 16853,
+        "stored_fields": 0,
+        "doc_values": 1753782,
+        "points": 0,
+        "bloom_filter": 524288,
+        "norms": 0,
+        "term_vectors": 0,
+        "knn_vectors": 0
+      }
+    },
+    {
+      "label": "logs-tsds_def.syn.lz4.po-metric",
+      "datastream": "logs-tsds_def.syn.lz4.po-metric",
+      "source_type": "metric",
+      "role": "case",
+      "index_mode": "tsds_def",
+      "_source": "syn",
+      "codec": "lz4",
+      "parse_type": "po",
+      "docs": 208944,
+      "raw_bytes": 10485777,
+      "primary_bytes": 7276251,
+      "total_bytes": 7276251,
+      "compression_ratio": 0.6939,
+      "backing_indices": [
+        ".ds-logs-tsds_def.syn.lz4.po-metric-2026.06.09-000001"
+      ],
+      "disk_usage": {
+        "inverted_index": 0,
+        "stored_fields": 0,
+        "doc_values": 3068785,
+        "points": 0,
+        "bloom_filter": 4194304,
+        "norms": 0,
+        "term_vectors": 0,
+        "knn_vectors": 0
+      }
+    },
+    {
+      "label": "logs-tsds_def.syn.lz4.po-service",
+      "datastream": "logs-tsds_def.syn.lz4.po-service",
+      "source_type": "service",
+      "role": "case",
+      "index_mode": "tsds_def",
+      "_source": "syn",
+      "codec": "lz4",
+      "parse_type": "po",
+      "docs": 32224,
+      "raw_bytes": 10485787,
+      "primary_bytes": 2923148,
+      "total_bytes": 2923148,
+      "compression_ratio": 0.2788,
+      "backing_indices": [
+        ".ds-logs-tsds_def.syn.lz4.po-service-2026.06.09-000001"
+      ],
+      "disk_usage": {
+        "inverted_index": 428634,
+        "stored_fields": 0,
+        "doc_values": 1948309,
+        "points": 0,
+        "bloom_filter": 524288,
+        "norms": 0,
+        "term_vectors": 0,
+        "knn_vectors": 0
+      }
+    },
+    {
+      "label": "logs-tsds_def.syn.zstd.oap-firewall",
+      "datastream": "logs-tsds_def.syn.zstd.oap-firewall",
+      "source_type": "firewall",
+      "role": "case",
+      "index_mode": "tsds_def",
+      "_source": "syn",
+      "codec": "zstd",
+      "parse_type": "oap",
+      "docs": 17944,
+      "raw_bytes": 10486256,
+      "primary_bytes": 4103844,
+      "total_bytes": 4103844,
+      "compression_ratio": 0.3914,
+      "backing_indices": [
+        ".ds-logs-tsds_def.syn.zstd.oap-firewall-2026.06.09-000001"
+      ],
+      "disk_usage": {
+        "inverted_index": 16853,
+        "stored_fields": 1781219,
+        "doc_values": 1753782,
+        "points": 0,
+        "bloom_filter": 524288,
+        "norms": 0,
+        "term_vectors": 0,
+        "knn_vectors": 0
+      }
+    },
+    {
+      "label": "logs-tsds_def.syn.zstd.oap-metric",
+      "datastream": "logs-tsds_def.syn.zstd.oap-metric",
+      "source_type": "metric",
+      "role": "case",
+      "index_mode": "tsds_def",
+      "_source": "syn",
+      "codec": "zstd",
+      "parse_type": "oap",
+      "docs": 208944,
+      "raw_bytes": 10485777,
+      "primary_bytes": 9734432,
+      "total_bytes": 9734432,
+      "compression_ratio": 0.9283,
+      "backing_indices": [
+        ".ds-logs-tsds_def.syn.zstd.oap-metric-2026.06.09-000001"
+      ],
+      "disk_usage": {
+        "inverted_index": 0,
+        "stored_fields": 2461200,
+        "doc_values": 3068785,
+        "points": 0,
+        "bloom_filter": 4194304,
+        "norms": 0,
+        "term_vectors": 0,
+        "knn_vectors": 0
+      }
+    },
+    {
+      "label": "logs-tsds_def.syn.zstd.oap-service",
+      "datastream": "logs-tsds_def.syn.zstd.oap-service",
+      "source_type": "service",
+      "role": "case",
+      "index_mode": "tsds_def",
+      "_source": "syn",
+      "codec": "zstd",
+      "parse_type": "oap",
+      "docs": 32224,
+      "raw_bytes": 10485787,
+      "primary_bytes": 4604369,
+      "total_bytes": 4604369,
+      "compression_ratio": 0.4391,
+      "backing_indices": [
+        ".ds-logs-tsds_def.syn.zstd.oap-service-2026.06.09-000001"
+      ],
+      "disk_usage": {
+        "inverted_index": 428634,
+        "stored_fields": 1680436,
+        "doc_values": 1948309,
+        "points": 0,
+        "bloom_filter": 524288,
+        "norms": 0,
+        "term_vectors": 0,
+        "knn_vectors": 0
+      }
+    },
+    {
+      "label": "logs-tsds_def.syn.zstd.po-firewall",
+      "datastream": "logs-tsds_def.syn.zstd.po-firewall",
+      "source_type": "firewall",
+      "role": "case",
+      "index_mode": "tsds_def",
+      "_source": "syn",
+      "codec": "zstd",
+      "parse_type": "po",
+      "docs": 17944,
+      "raw_bytes": 10486256,
+      "primary_bytes": 2322682,
+      "total_bytes": 2322682,
+      "compression_ratio": 0.2215,
+      "backing_indices": [
+        ".ds-logs-tsds_def.syn.zstd.po-firewall-2026.06.09-000001"
+      ],
+      "disk_usage": {
+        "inverted_index": 16853,
+        "stored_fields": 0,
+        "doc_values": 1753782,
+        "points": 0,
+        "bloom_filter": 524288,
+        "norms": 0,
+        "term_vectors": 0,
+        "knn_vectors": 0
+      }
+    },
+    {
+      "label": "logs-tsds_def.syn.zstd.po-metric",
+      "datastream": "logs-tsds_def.syn.zstd.po-metric",
+      "source_type": "metric",
+      "role": "case",
+      "index_mode": "tsds_def",
+      "_source": "syn",
+      "codec": "zstd",
+      "parse_type": "po",
+      "docs": 208944,
+      "raw_bytes": 10485777,
+      "primary_bytes": 7274336,
+      "total_bytes": 7274336,
+      "compression_ratio": 0.6937,
+      "backing_indices": [
+        ".ds-logs-tsds_def.syn.zstd.po-metric-2026.06.09-000001"
+      ],
+      "disk_usage": {
+        "inverted_index": 0,
+        "stored_fields": 0,
+        "doc_values": 3068785,
+        "points": 0,
+        "bloom_filter": 4194304,
+        "norms": 0,
+        "term_vectors": 0,
+        "knn_vectors": 0
+      }
+    },
+    {
+      "label": "logs-tsds_def.syn.zstd.po-service",
+      "datastream": "logs-tsds_def.syn.zstd.po-service",
+      "source_type": "service",
+      "role": "case",
+      "index_mode": "tsds_def",
+      "_source": "syn",
+      "codec": "zstd",
+      "parse_type": "po",
+      "docs": 32224,
+      "raw_bytes": 10485787,
+      "primary_bytes": 2922833,
+      "total_bytes": 2922833,
+      "compression_ratio": 0.2787,
+      "backing_indices": [
+        ".ds-logs-tsds_def.syn.zstd.po-service-2026.06.09-000001"
+      ],
+      "disk_usage": {
+        "inverted_index": 428634,
+        "stored_fields": 0,
+        "doc_values": 1948309,
+        "points": 0,
+        "bloom_filter": 524288,
+        "norms": 0,
+        "term_vectors": 0,
+        "knn_vectors": 0
+      }
+    },
+    {
+      "label": "logs-tsds_iof.str.lz4.oap-firewall",
+      "datastream": "logs-tsds_iof.str.lz4.oap-firewall",
+      "source_type": "firewall",
+      "role": "case",
+      "index_mode": "tsds_iof",
+      "_source": "str",
+      "codec": "lz4",
+      "parse_type": "oap",
+      "docs": 17944,
+      "raw_bytes": 10486256,
+      "primary_bytes": 10348770,
+      "total_bytes": 10348770,
+      "compression_ratio": 0.9869,
+      "backing_indices": [
+        ".ds-logs-tsds_iof.str.lz4.oap-firewall-2026.06.09-000001"
+      ],
+      "disk_usage": {
+        "inverted_index": 434505,
+        "stored_fields": 8148759,
+        "doc_values": 1735838,
+        "points": 0,
+        "bloom_filter": 0,
+        "norms": 0,
+        "term_vectors": 0,
+        "knn_vectors": 0
+      }
+    },
+    {
+      "label": "logs-tsds_iof.str.lz4.oap-metric",
+      "datastream": "logs-tsds_iof.str.lz4.oap-metric",
+      "source_type": "metric",
+      "role": "case",
+      "index_mode": "tsds_iof",
+      "_source": "str",
+      "codec": "lz4",
+      "parse_type": "oap",
+      "docs": 208944,
+      "raw_bytes": 10485777,
+      "primary_bytes": 17673155,
+      "total_bytes": 17673155,
+      "compression_ratio": 1.6854,
+      "backing_indices": [
+        ".ds-logs-tsds_iof.str.lz4.oap-metric-2026.06.09-000001"
+      ],
+      "disk_usage": {
+        "inverted_index": 4514922,
+        "stored_fields": 10076122,
+        "doc_values": 3016549,
+        "points": 0,
+        "bloom_filter": 0,
+        "norms": 0,
+        "term_vectors": 0,
+        "knn_vectors": 0
+      }
+    },
+    {
+      "label": "logs-tsds_iof.str.lz4.oap-service",
+      "datastream": "logs-tsds_iof.str.lz4.oap-service",
+      "source_type": "service",
+      "role": "case",
+      "index_mode": "tsds_iof",
+      "_source": "str",
+      "codec": "lz4",
+      "parse_type": "oap",
+      "docs": 32224,
+      "raw_bytes": 10485787,
+      "primary_bytes": 11656386,
+      "total_bytes": 11656386,
+      "compression_ratio": 1.1116,
+      "backing_indices": [
+        ".ds-logs-tsds_iof.str.lz4.oap-service-2026.06.09-000001"
+      ],
+      "disk_usage": {
+        "inverted_index": 1184149,
+        "stored_fields": 8531104,
+        "doc_values": 1916085,
+        "points": 0,
+        "bloom_filter": 0,
+        "norms": 0,
+        "term_vectors": 0,
+        "knn_vectors": 0
+      }
+    },
+    {
+      "label": "logs-tsds_iof.str.lz4.po-firewall",
+      "datastream": "logs-tsds_iof.str.lz4.po-firewall",
+      "source_type": "firewall",
+      "role": "case",
+      "index_mode": "tsds_iof",
+      "_source": "str",
+      "codec": "lz4",
+      "parse_type": "po",
+      "docs": 17944,
+      "raw_bytes": 10486256,
+      "primary_bytes": 6567050,
+      "total_bytes": 6567050,
+      "compression_ratio": 0.6263,
+      "backing_indices": [
+        ".ds-logs-tsds_iof.str.lz4.po-firewall-2026.06.09-000001"
+      ],
+      "disk_usage": {
+        "inverted_index": 434505,
+        "stored_fields": 4366983,
+        "doc_values": 1735838,
+        "points": 0,
+        "bloom_filter": 0,
+        "norms": 0,
+        "term_vectors": 0,
+        "knn_vectors": 0
+      }
+    },
+    {
+      "label": "logs-tsds_iof.str.lz4.po-metric",
+      "datastream": "logs-tsds_iof.str.lz4.po-metric",
+      "source_type": "metric",
+      "role": "case",
+      "index_mode": "tsds_iof",
+      "_source": "str",
+      "codec": "lz4",
+      "parse_type": "po",
+      "docs": 208944,
+      "raw_bytes": 10485777,
+      "primary_bytes": 14790105,
+      "total_bytes": 14790105,
+      "compression_ratio": 1.4105,
+      "backing_indices": [
+        ".ds-logs-tsds_iof.str.lz4.po-metric-2026.06.09-000001"
+      ],
+      "disk_usage": {
+        "inverted_index": 4514922,
+        "stored_fields": 7193107,
+        "doc_values": 3016549,
+        "points": 0,
+        "bloom_filter": 0,
+        "norms": 0,
+        "term_vectors": 0,
+        "knn_vectors": 0
+      }
+    },
+    {
+      "label": "logs-tsds_iof.str.lz4.po-service",
+      "datastream": "logs-tsds_iof.str.lz4.po-service",
+      "source_type": "service",
+      "role": "case",
+      "index_mode": "tsds_iof",
+      "_source": "str",
+      "codec": "lz4",
+      "parse_type": "po",
+      "docs": 32224,
+      "raw_bytes": 10485787,
+      "primary_bytes": 7793158,
+      "total_bytes": 7793158,
+      "compression_ratio": 0.7432,
+      "backing_indices": [
+        ".ds-logs-tsds_iof.str.lz4.po-service-2026.06.09-000001"
+      ],
+      "disk_usage": {
+        "inverted_index": 1184149,
+        "stored_fields": 4667861,
+        "doc_values": 1916085,
+        "points": 0,
+        "bloom_filter": 0,
+        "norms": 0,
+        "term_vectors": 0,
+        "knn_vectors": 0
+      }
+    },
+    {
+      "label": "logs-tsds_iof.str.zstd.oap-firewall",
+      "datastream": "logs-tsds_iof.str.zstd.oap-firewall",
+      "source_type": "firewall",
+      "role": "case",
+      "index_mode": "tsds_iof",
+      "_source": "str",
+      "codec": "zstd",
+      "parse_type": "oap",
+      "docs": 17944,
+      "raw_bytes": 10486256,
+      "primary_bytes": 6267503,
+      "total_bytes": 6267503,
+      "compression_ratio": 0.5977,
+      "backing_indices": [
+        ".ds-logs-tsds_iof.str.zstd.oap-firewall-2026.06.09-000001"
+      ],
+      "disk_usage": {
+        "inverted_index": 434505,
+        "stored_fields": 4067439,
+        "doc_values": 1735838,
+        "points": 0,
+        "bloom_filter": 0,
+        "norms": 0,
+        "term_vectors": 0,
+        "knn_vectors": 0
+      }
+    },
+    {
+      "label": "logs-tsds_iof.str.zstd.oap-metric",
+      "datastream": "logs-tsds_iof.str.zstd.oap-metric",
+      "source_type": "metric",
+      "role": "case",
+      "index_mode": "tsds_iof",
+      "_source": "str",
+      "codec": "zstd",
+      "parse_type": "oap",
+      "docs": 208944,
+      "raw_bytes": 10485777,
+      "primary_bytes": 12683117,
+      "total_bytes": 12683117,
+      "compression_ratio": 1.2096,
+      "backing_indices": [
+        ".ds-logs-tsds_iof.str.zstd.oap-metric-2026.06.09-000001"
+      ],
+      "disk_usage": {
+        "inverted_index": 4514922,
+        "stored_fields": 5086120,
+        "doc_values": 3016549,
+        "points": 0,
+        "bloom_filter": 0,
+        "norms": 0,
+        "term_vectors": 0,
+        "knn_vectors": 0
+      }
+    },
+    {
+      "label": "logs-tsds_iof.str.zstd.oap-service",
+      "datastream": "logs-tsds_iof.str.zstd.oap-service",
+      "source_type": "service",
+      "role": "case",
+      "index_mode": "tsds_iof",
+      "_source": "str",
+      "codec": "zstd",
+      "parse_type": "oap",
+      "docs": 32224,
+      "raw_bytes": 10485787,
+      "primary_bytes": 7342868,
+      "total_bytes": 7342868,
+      "compression_ratio": 0.7003,
+      "backing_indices": [
+        ".ds-logs-tsds_iof.str.zstd.oap-service-2026.06.09-000001"
+      ],
+      "disk_usage": {
+        "inverted_index": 1184149,
+        "stored_fields": 4217569,
+        "doc_values": 1916085,
+        "points": 0,
+        "bloom_filter": 0,
+        "norms": 0,
+        "term_vectors": 0,
+        "knn_vectors": 0
+      }
+    },
+    {
+      "label": "logs-tsds_iof.str.zstd.po-firewall",
+      "datastream": "logs-tsds_iof.str.zstd.po-firewall",
+      "source_type": "firewall",
+      "role": "case",
+      "index_mode": "tsds_iof",
+      "_source": "str",
+      "codec": "zstd",
+      "parse_type": "po",
+      "docs": 17944,
+      "raw_bytes": 10486256,
+      "primary_bytes": 4685256,
+      "total_bytes": 4685256,
+      "compression_ratio": 0.4468,
+      "backing_indices": [
+        ".ds-logs-tsds_iof.str.zstd.po-firewall-2026.06.09-000001"
+      ],
+      "disk_usage": {
+        "inverted_index": 434505,
+        "stored_fields": 2485192,
+        "doc_values": 1735838,
+        "points": 0,
+        "bloom_filter": 0,
+        "norms": 0,
+        "term_vectors": 0,
+        "knn_vectors": 0
+      }
+    },
+    {
+      "label": "logs-tsds_iof.str.zstd.po-metric",
+      "datastream": "logs-tsds_iof.str.zstd.po-metric",
+      "source_type": "metric",
+      "role": "case",
+      "index_mode": "tsds_iof",
+      "_source": "str",
+      "codec": "zstd",
+      "parse_type": "po",
+      "docs": 208944,
+      "raw_bytes": 10485777,
+      "primary_bytes": 11175791,
+      "total_bytes": 11175791,
+      "compression_ratio": 1.0658,
+      "backing_indices": [
+        ".ds-logs-tsds_iof.str.zstd.po-metric-2026.06.09-000001"
+      ],
+      "disk_usage": {
+        "inverted_index": 4514922,
+        "stored_fields": 3578726,
+        "doc_values": 3016549,
+        "points": 0,
+        "bloom_filter": 0,
+        "norms": 0,
+        "term_vectors": 0,
+        "knn_vectors": 0
+      }
+    },
+    {
+      "label": "logs-tsds_iof.str.zstd.po-service",
+      "datastream": "logs-tsds_iof.str.zstd.po-service",
+      "source_type": "service",
+      "role": "case",
+      "index_mode": "tsds_iof",
+      "_source": "str",
+      "codec": "zstd",
+      "parse_type": "po",
+      "docs": 32224,
+      "raw_bytes": 10485787,
+      "primary_bytes": 5806495,
+      "total_bytes": 5806495,
+      "compression_ratio": 0.5537,
+      "backing_indices": [
+        ".ds-logs-tsds_iof.str.zstd.po-service-2026.06.09-000001"
+      ],
+      "disk_usage": {
+        "inverted_index": 1184149,
+        "stored_fields": 2681189,
+        "doc_values": 1916085,
+        "points": 0,
+        "bloom_filter": 0,
+        "norms": 0,
+        "term_vectors": 0,
+        "knn_vectors": 0
+      }
+    },
+    {
+      "label": "logs-tsds_iof.syn.lz4.oap-firewall",
+      "datastream": "logs-tsds_iof.syn.lz4.oap-firewall",
+      "source_type": "firewall",
+      "role": "case",
+      "index_mode": "tsds_iof",
+      "_source": "syn",
+      "codec": "lz4",
+      "parse_type": "oap",
+      "docs": 17944,
+      "raw_bytes": 10486256,
+      "primary_bytes": 5749942,
+      "total_bytes": 5749942,
+      "compression_ratio": 0.5483,
+      "backing_indices": [
+        ".ds-logs-tsds_iof.syn.lz4.oap-firewall-2026.06.09-000001"
+      ],
+      "disk_usage": {
+        "inverted_index": 434505,
+        "stored_fields": 3531729,
+        "doc_values": 1753782,
+        "points": 0,
+        "bloom_filter": 0,
+        "norms": 0,
+        "term_vectors": 0,
+        "knn_vectors": 0
+      }
+    },
+    {
+      "label": "logs-tsds_iof.syn.lz4.oap-metric",
+      "datastream": "logs-tsds_iof.syn.lz4.oap-metric",
+      "source_type": "metric",
+      "role": "case",
+      "index_mode": "tsds_iof",
+      "_source": "syn",
+      "codec": "lz4",
+      "parse_type": "oap",
+      "docs": 208944,
+      "raw_bytes": 10485777,
+      "primary_bytes": 12998334,
+      "total_bytes": 12998334,
+      "compression_ratio": 1.2396,
+      "backing_indices": [
+        ".ds-logs-tsds_iof.syn.lz4.oap-metric-2026.06.09-000001"
+      ],
+      "disk_usage": {
+        "inverted_index": 4514922,
+        "stored_fields": 5348832,
+        "doc_values": 3068785,
+        "points": 0,
+        "bloom_filter": 0,
+        "norms": 0,
+        "term_vectors": 0,
+        "knn_vectors": 0
+      }
+    },
+    {
+      "label": "logs-tsds_iof.syn.lz4.oap-service",
+      "datastream": "logs-tsds_iof.syn.lz4.oap-service",
+      "source_type": "service",
+      "role": "case",
+      "index_mode": "tsds_iof",
+      "_source": "syn",
+      "codec": "lz4",
+      "parse_type": "oap",
+      "docs": 32224,
+      "raw_bytes": 10485787,
+      "primary_bytes": 6882099,
+      "total_bytes": 6882099,
+      "compression_ratio": 0.6563,
+      "backing_indices": [
+        ".ds-logs-tsds_iof.syn.lz4.oap-service-2026.06.09-000001"
+      ],
+      "disk_usage": {
+        "inverted_index": 1184149,
+        "stored_fields": 3723177,
+        "doc_values": 1948309,
+        "points": 0,
+        "bloom_filter": 0,
+        "norms": 0,
+        "term_vectors": 0,
+        "knn_vectors": 0
+      }
+    },
+    {
+      "label": "logs-tsds_iof.syn.lz4.po-firewall",
+      "datastream": "logs-tsds_iof.syn.lz4.po-firewall",
+      "source_type": "firewall",
+      "role": "case",
+      "index_mode": "tsds_iof",
+      "_source": "syn",
+      "codec": "lz4",
+      "parse_type": "po",
+      "docs": 17944,
+      "raw_bytes": 10486256,
+      "primary_bytes": 2574832,
+      "total_bytes": 2574832,
+      "compression_ratio": 0.2455,
+      "backing_indices": [
+        ".ds-logs-tsds_iof.syn.lz4.po-firewall-2026.06.09-000001"
+      ],
+      "disk_usage": {
+        "inverted_index": 434505,
+        "stored_fields": 356609,
+        "doc_values": 1753782,
+        "points": 0,
+        "bloom_filter": 0,
+        "norms": 0,
+        "term_vectors": 0,
+        "knn_vectors": 0
+      }
+    },
+    {
+      "label": "logs-tsds_iof.syn.lz4.po-metric",
+      "datastream": "logs-tsds_iof.syn.lz4.po-metric",
+      "source_type": "metric",
+      "role": "case",
+      "index_mode": "tsds_iof",
+      "_source": "syn",
+      "codec": "lz4",
+      "parse_type": "po",
+      "docs": 208944,
+      "raw_bytes": 10485777,
+      "primary_bytes": 9365034,
+      "total_bytes": 9365034,
+      "compression_ratio": 0.8931,
+      "backing_indices": [
+        ".ds-logs-tsds_iof.syn.lz4.po-metric-2026.06.09-000001"
+      ],
+      "disk_usage": {
+        "inverted_index": 4514922,
+        "stored_fields": 1715592,
+        "doc_values": 3068785,
+        "points": 0,
+        "bloom_filter": 0,
+        "norms": 0,
+        "term_vectors": 0,
+        "knn_vectors": 0
+      }
+    },
+    {
+      "label": "logs-tsds_iof.syn.lz4.po-service",
+      "datastream": "logs-tsds_iof.syn.lz4.po-service",
+      "source_type": "service",
+      "role": "case",
+      "index_mode": "tsds_iof",
+      "_source": "syn",
+      "codec": "lz4",
+      "parse_type": "po",
+      "docs": 32224,
+      "raw_bytes": 10485787,
+      "primary_bytes": 3834183,
+      "total_bytes": 3834183,
+      "compression_ratio": 0.3657,
+      "backing_indices": [
+        ".ds-logs-tsds_iof.syn.lz4.po-service-2026.06.09-000001"
+      ],
+      "disk_usage": {
+        "inverted_index": 1184149,
+        "stored_fields": 676583,
+        "doc_values": 1948309,
+        "points": 0,
+        "bloom_filter": 0,
+        "norms": 0,
+        "term_vectors": 0,
+        "knn_vectors": 0
+      }
+    },
+    {
+      "label": "logs-tsds_iof.syn.zstd.oap-firewall",
+      "datastream": "logs-tsds_iof.syn.zstd.oap-firewall",
+      "source_type": "firewall",
+      "role": "case",
+      "index_mode": "tsds_iof",
+      "_source": "syn",
+      "codec": "zstd",
+      "parse_type": "oap",
+      "docs": 17944,
+      "raw_bytes": 10486256,
+      "primary_bytes": 4335981,
+      "total_bytes": 4335981,
+      "compression_ratio": 0.4135,
+      "backing_indices": [
+        ".ds-logs-tsds_iof.syn.zstd.oap-firewall-2026.06.09-000001"
+      ],
+      "disk_usage": {
+        "inverted_index": 434505,
+        "stored_fields": 2117777,
+        "doc_values": 1753782,
+        "points": 0,
+        "bloom_filter": 0,
+        "norms": 0,
+        "term_vectors": 0,
+        "knn_vectors": 0
+      }
+    },
+    {
+      "label": "logs-tsds_iof.syn.zstd.oap-metric",
+      "datastream": "logs-tsds_iof.syn.zstd.oap-metric",
+      "source_type": "metric",
+      "role": "case",
+      "index_mode": "tsds_iof",
+      "_source": "syn",
+      "codec": "zstd",
+      "parse_type": "oap",
+      "docs": 208944,
+      "raw_bytes": 10485777,
+      "primary_bytes": 10489775,
+      "total_bytes": 10489775,
+      "compression_ratio": 1.0004,
+      "backing_indices": [
+        ".ds-logs-tsds_iof.syn.zstd.oap-metric-2026.06.09-000001"
+      ],
+      "disk_usage": {
+        "inverted_index": 4514922,
+        "stored_fields": 2840241,
+        "doc_values": 3068785,
+        "points": 0,
+        "bloom_filter": 0,
+        "norms": 0,
+        "term_vectors": 0,
+        "knn_vectors": 0
+      }
+    },
+    {
+      "label": "logs-tsds_iof.syn.zstd.oap-service",
+      "datastream": "logs-tsds_iof.syn.zstd.oap-service",
+      "source_type": "service",
+      "role": "case",
+      "index_mode": "tsds_iof",
+      "_source": "syn",
+      "codec": "zstd",
+      "parse_type": "oap",
+      "docs": 32224,
+      "raw_bytes": 10485787,
+      "primary_bytes": 5417050,
+      "total_bytes": 5417050,
+      "compression_ratio": 0.5166,
+      "backing_indices": [
+        ".ds-logs-tsds_iof.syn.zstd.oap-service-2026.06.09-000001"
+      ],
+      "disk_usage": {
+        "inverted_index": 1184149,
+        "stored_fields": 2258121,
+        "doc_values": 1948309,
+        "points": 0,
+        "bloom_filter": 0,
+        "norms": 0,
+        "term_vectors": 0,
+        "knn_vectors": 0
+      }
+    },
+    {
+      "label": "logs-tsds_iof.syn.zstd.po-firewall",
+      "datastream": "logs-tsds_iof.syn.zstd.po-firewall",
+      "source_type": "firewall",
+      "role": "case",
+      "index_mode": "tsds_iof",
+      "_source": "syn",
+      "codec": "zstd",
+      "parse_type": "po",
+      "docs": 17944,
+      "raw_bytes": 10486256,
+      "primary_bytes": 2507317,
+      "total_bytes": 2507317,
+      "compression_ratio": 0.2391,
+      "backing_indices": [
+        ".ds-logs-tsds_iof.syn.zstd.po-firewall-2026.06.09-000001"
+      ],
+      "disk_usage": {
+        "inverted_index": 434505,
+        "stored_fields": 289173,
+        "doc_values": 1753782,
+        "points": 0,
+        "bloom_filter": 0,
+        "norms": 0,
+        "term_vectors": 0,
+        "knn_vectors": 0
+      }
+    },
+    {
+      "label": "logs-tsds_iof.syn.zstd.po-metric",
+      "datastream": "logs-tsds_iof.syn.zstd.po-metric",
+      "source_type": "metric",
+      "role": "case",
+      "index_mode": "tsds_iof",
+      "_source": "syn",
+      "codec": "zstd",
+      "parse_type": "po",
+      "docs": 208944,
+      "raw_bytes": 10485777,
+      "primary_bytes": 8279727,
+      "total_bytes": 8279727,
+      "compression_ratio": 0.7896,
+      "backing_indices": [
+        ".ds-logs-tsds_iof.syn.zstd.po-metric-2026.06.09-000001"
+      ],
+      "disk_usage": {
+        "inverted_index": 4514922,
+        "stored_fields": 630285,
+        "doc_values": 3068785,
+        "points": 0,
+        "bloom_filter": 0,
+        "norms": 0,
+        "term_vectors": 0,
+        "knn_vectors": 0
+      }
+    },
+    {
+      "label": "logs-tsds_iof.syn.zstd.po-service",
+      "datastream": "logs-tsds_iof.syn.zstd.po-service",
+      "source_type": "service",
+      "role": "case",
+      "index_mode": "tsds_iof",
+      "_source": "syn",
+      "codec": "zstd",
+      "parse_type": "po",
+      "docs": 32224,
+      "raw_bytes": 10485787,
+      "primary_bytes": 3743180,
+      "total_bytes": 3743180,
+      "compression_ratio": 0.357,
+      "backing_indices": [
+        ".ds-logs-tsds_iof.syn.zstd.po-service-2026.06.09-000001"
+      ],
+      "disk_usage": {
+        "inverted_index": 1184149,
+        "stored_fields": 585543,
+        "doc_values": 1948309,
+        "points": 0,
+        "bloom_filter": 0,
+        "norms": 0,
+        "term_vectors": 0,
+        "knn_vectors": 0
+      }
+    }
+  ]
+}
